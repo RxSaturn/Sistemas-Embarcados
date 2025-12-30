@@ -1,6 +1,6 @@
 ## Page 1
 
-&lt;img&gt;Logo with red circle and green squares&lt;/img&gt;
+<!-- Imagem: Logo with red circle and green squares -->
 INSTITUTO FEDERAL
 DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA
 Minas Gerais
@@ -24,7 +24,6 @@ williams.nicomedes@ifmg.edu.br
 
 A linguagem VHDL
 
-&lt;page_number&gt;2&lt;/page_number&gt;
 
 ---
 
@@ -33,13 +32,13 @@ A linguagem VHDL
 
 # Fluxo de projeto
 
-<mermaid>
+```mermaid
 graph LR
     A[Especificações] --> B[HDL]
     B --> C[RTL]
     C --> D[Síntese]
     D --> E[Fabricação]
-</mermaid>
+```
 
 1.  **Especificações** sobre o sistema digital a ser construído (circ. comb., seq,...). Modelo de chip FPGA e ferramenta EDA a serem empregados.
 
@@ -56,13 +55,13 @@ graph LR
 
 # Fluxo de projeto
 
-<mermaid>
+```mermaid
 graph LR
     A[Especificações] --> B[HDL]
     B --> C[RTL]
     C --> D[Síntese]
     D --> E[Fabricação]
-</mermaid>
+```
 
 4. **Síntese**: A partir da descrição/circuito RTL, a ferramenta gera um arquivo *netlist* (nível de portas lógicas – *gate level* – nível baixo de abstração), levando-se em conta a tecnologia disponível em (1).
 
@@ -72,7 +71,6 @@ Do arquivo *netlist* sairão as informações de posicionamento e roteamento (*p
 
 5. **Fabricação**: Implementação física (ligações no chip).
 
-&lt;page_number&gt;4&lt;/page_number&gt;
 
 ---
 
@@ -87,9 +85,8 @@ Dividida em três unidades principais de projeto (design units):
 
 Ordem em que aparecem no código:
 
-&lt;img&gt;A diagram showing three stacked rectangular blocks. The top block says "BIBLIOTECAS / PACOTES". The middle block says "ENTIDADE". The bottom block says "ARQUITETURA".&lt;/img&gt;
+<!-- Imagem: A diagram showing three stacked rectangular blocks. The top block says "BIBLIOTECAS / PACOTES". The middle block says "ENTIDADE". The bottom block says "ARQUITETURA". -->
 
-&lt;page_number&gt;5&lt;/page_number&gt;
 
 ---
 
@@ -104,9 +101,8 @@ Ordem em que aparecem no código:
 
 **Arquitetura:** Funcionalidade do circuito, i.e., sua lógica interna. “O que acontece dentro do circuito?”
 
-&lt;img&gt;A diagram showing a chip with "Entidade" (Entity) at the top left and "Arquitetura" (Architecture) at the bottom right, indicating the relationship between the entity and architecture.&lt;/img&gt;
+<!-- Imagem: A diagram showing a chip with "Entidade" (Entity) at the top left and "Arquitetura" (Architecture) at the bottom right, indicating the relationship between the entity and architecture. -->
 
-&lt;page_number&gt;6&lt;/page_number&gt;
 
 ---
 
@@ -150,7 +146,7 @@ std_logic é mais geral do que bit
 
 Inclui tipos como indeterminado, “1” forte, “1” fraco, “0” forte, “0” fraco...
 
-&lt;img&gt;∞ symbol&lt;/img&gt;
+<!-- Imagem: ∞ symbol -->
 
 ---
 
@@ -171,7 +167,6 @@ Não são obrigatórias.
 
 *Ex.:* Código VHDL para *documentar* o funcionamento de um circuito.
 
-&lt;page_number&gt;9&lt;/page_number&gt;
 
 ---
 
@@ -191,7 +186,6 @@ Arquivos de projeto (*Design Files*) limitados a:
 
 Arquivos de verificação (*Verification/Debugging Files*):
 *   *University VWF (vector waveform)*: Formas de onda.
-&lt;page_number&gt;10&lt;/page_number&gt;
 
 ---
 
@@ -210,7 +204,6 @@ O Quartus II “entende” que vamos de fato passar o circuito para o PLD. Detal
 
 Quartus II não é ferramenta SPICE.
 
-&lt;page_number&gt;1&lt;/page_number&gt;
 
 ---
 
@@ -229,7 +222,6 @@ Dividir para conquistar. Produzir pequenos blocos para diferentes funções e de
 
 Modelagem estrutural (Notas de Aula 10).
 
-&lt;page_number&gt;12&lt;/page_number&gt;
 
 ---
 
@@ -248,7 +240,6 @@ Maneira 1: Posiciona o cursor na entrada/saída, até ele se tornar uma cruz. Ar
 
 Maneira 2: Arrastar o objeto; Encostar os pinos; Soltar o botão do mouse; Arrastar o objeto de volta à sua posição original.
 
-&lt;page_number&gt;13&lt;/page_number&gt;
 
 ---
 
@@ -272,7 +263,6 @@ Diferentes nomes, sempre que possível.
 
 *Project Navigator > Arquivo esquematico > Right-click > Set as Top-Level Entity*
 
-&lt;page_number&gt;14&lt;/page_number&gt;
 
 ---
 
@@ -285,7 +275,6 @@ Circuitos Combinacionais:
 
 Função Booleana z = A · B + C̄.
 
-&lt;page_number&gt;15&lt;/page_number&gt;
 
 ---
 
@@ -298,9 +287,8 @@ Códigos VHDL: Tipos de arquivos no Quartus II:
 
 Verification/Debugging Files: *University Program VWF.*
 
-&lt;img&gt;Screenshot showing three instances of the "New" dialog box from Quartus II. Each instance lists various file types under "New Quartus II Project" with sections like "Design Files", "Memory Files", "Verification/Debugging Files", and "Other Files". The "Verification/Debugging Files" section includes "In-System Sources and Probes File", "Logic Analyzer Interface File", "SignalTap II Logic Analyzer File", and "University Program VWF". The "Other Files" section includes "AHDL Include File", "Block Symbol File", "Chain Description File", "Synopsys Design Constraints File", and "Text File". Each dialog has buttons labeled "OK", "Cancel", and "Help".&lt;/img&gt;
+<!-- Imagem: Screenshot showing three instances of the "New" dialog box from Quartus II. Each instance lists various file types under "New Quartus II Project" with sections like "Design Files", "Memory Files", "Verification/Debugging Files", and "Other Files". The "Verification/Debugging Files" section includes "In-System Sources and Probes File", "Logic Analyzer Interface File", "SignalTap II Logic Analyzer File", and "University Program VWF". The "Other Files" section includes "AHDL Include File", "Block Symbol File", "Chain Description File", "Synopsys Design Constraints File", and "Text File". Each dialog has buttons labeled "OK", "Cancel", and "Help". -->
 
-&lt;page_number&gt;16&lt;/page_number&gt;
 
 ---
 
@@ -311,9 +299,8 @@ Verification/Debugging Files: *University Program VWF.*
 
 Circuito (diagrama esquemático) e bloco lógico.
 
-&lt;img&gt;A schematic diagram showing inputs A, B, and C connected to a NOT gate (inst2), an AND gate (AND2), and an OR gate (OR2). The output of the AND gate is connected to the OR gate. The output of the OR gate is labeled D. Below this circuit, a block labeled "BlocoComb" has three inputs (in1, in2, in3) and one output (out1). The output out1 is connected to another output labeled E.&lt;/img&gt;
+<!-- Imagem: A schematic diagram showing inputs A, B, and C connected to a NOT gate (inst2), an AND gate (AND2), and an OR gate (OR2). The output of the AND gate is connected to the OR gate. The output of the OR gate is labeled D. Below this circuit, a block labeled "BlocoComb" has three inputs (in1, in2, in3) and one output (out1). The output out1 is connected to another output labeled E. -->
 
-&lt;page_number&gt;17&lt;/page_number&gt;
 
 ---
 
@@ -343,7 +330,6 @@ begin
     out1 <= x OR y;
 end Funcionamento;
 ```
-&lt;page_number&gt;18&lt;/page_number&gt;
 
 ---
 
@@ -367,7 +353,6 @@ Geração do bloco, inserção no esquemático e compilação:
 Analyze Current File
 File > Create/Update > Create Symbol Files (...)
 
-&lt;page_number&gt;19&lt;/page_number&gt;
 
 ---
 
@@ -382,9 +367,8 @@ Arquivos *University Program VWF*;
 
 Verificação do funcionamento do circuito.
 
-&lt;img&gt;Waveform diagram showing input signals A, B, and C with values 0 at 0 ps, rising to 1 around 100 ns, and output signals D and E with values X (unknown) at 0 ps, rising to 1 around 300 ns.&lt;/img&gt;
+<!-- Imagem: Waveform diagram showing input signals A, B, and C with values 0 at 0 ps, rising to 1 around 100 ns, and output signals D and E with values X (unknown) at 0 ps, rising to 1 around 300 ns. -->
 
-&lt;page_number&gt;20&lt;/page_number&gt;
 
 ---
 
@@ -395,7 +379,7 @@ Verificação do funcionamento do circuito.
 
 Formas de onda: Saídas em função das entradas:
 
-&lt;img&gt;Waveform diagram showing input signals A, B, C and output signal D/E. The x-axis ranges from 0 ps to 800.0 ns. The y-axis shows "Value at 0 ps" with labels for A, B, C, D, and E.&lt;/img&gt;
+<!-- Imagem: Waveform diagram showing input signals A, B, C and output signal D/E. The x-axis ranges from 0 ps to 800.0 ns. The y-axis shows "Value at 0 ps" with labels for A, B, C, D, and E. -->
 
 Tabela-verdade:
 
@@ -460,4 +444,3 @@ Tabela-verdade:
   </tbody>
 </table>
 
-&lt;page_number&gt;21&lt;/page_number&gt;

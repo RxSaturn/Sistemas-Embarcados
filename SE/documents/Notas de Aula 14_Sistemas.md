@@ -1,6 +1,6 @@
 ## Page 1
 
-&lt;img&gt;Logo with red circle and green squares&lt;/img&gt;
+<!-- Imagem: Logo with red circle and green squares -->
 INSTITUTO FEDERAL
 DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA
 Minas Gerais
@@ -24,7 +24,6 @@ williams.nicomedes@ifmg.edu.br
 
 Projeto de circuitos combinacionais através da linguagem VHDL
 
-&lt;page_number&gt;2&lt;/page_number&gt;
 
 ---
 
@@ -44,7 +43,6 @@ Uso: Dentro de processos (process).
 **Constante (constant):**
 Uso: Diversos locais do código; inicializada com um valor específico e fixo.
 
-&lt;page_number&gt;3&lt;/page_number&gt;
 
 ---
 
@@ -64,7 +62,6 @@ Uso: Diversos locais do código; inicializada com um valor específico e fixo.
 
 ## Dados escalares x Dados compostos (vetores)...
 
-&lt;page_number&gt;4&lt;/page_number&gt;
 
 ---
 
@@ -126,9 +123,8 @@ Parênteses (evitar ambiguidade).
 
 (Def.) Níveis lógicos das saídas dependentes única e exclusivamente da relação lógica entre as entradas.
 
-&lt;img&gt;A diagram showing a "Circuito digital combinacional" (Digital combinational circuit). On the left side, there are three vertical labels: "Entradas" (Inputs) with arrows pointing to E₀, E₁, and Eₙ. On the right side, there are three vertical labels: "Saídas" (Outputs) with arrows pointing to S₀, S₁, and Sₘ.&lt;/img&gt;
+<!-- Imagem: A diagram showing a "Circuito digital combinacional" (Digital combinational circuit). On the left side, there are three vertical labels: "Entradas" (Inputs) with arrows pointing to E₀, E₁, and Eₙ. On the right side, there are three vertical labels: "Saídas" (Outputs) with arrows pointing to S₀, S₁, and Sₘ. -->
 
-&lt;page_number&gt;6&lt;/page_number&gt;
 
 ---
 
@@ -146,7 +142,6 @@ Simplificação das expressões via álgebra booleana e mapas de Karnaugh;
 4. Descrição em código VHDL;
 5. Implementação em FPGA (síntese).
 
-&lt;page_number&gt;7&lt;/page_number&gt;
 
 ---
 
@@ -163,7 +158,7 @@ Variáveis de saída: Sinais direcionados aos **atuadores** (motores, aquecedore
 
 Exemplo prático: Sistema Automático de Controle de Irrigação (SACI)
 
-&lt;img&gt;∞ symbol&lt;/img&gt;
+<!-- Imagem: ∞ symbol -->
 
 ---
 
@@ -172,7 +167,7 @@ Exemplo prático: Sistema Automático de Controle de Irrigação (SACI)
 
 # Exemplo prático: SACI
 
-<mermaid>
+```mermaid
 graph TD
     U1[Sensor de umidade baixa (U1)] --> CL[Circuito Lógico Combinacional]
     U2[Sensor de umidade alta (U2)] --> CL
@@ -181,10 +176,9 @@ graph TD
     IP --> EV[Eletroválvula (E)]
     CL --> LA[LED azul (LA)]
     CL --> LV[LED vermelho (LV)]
-</mermaid>
+```
 
 Circuito lógico: A ser implementado em um chip FPGA.
-&lt;page_number&gt;9&lt;/page_number&gt;
 
 ---
 
@@ -200,11 +194,8 @@ Permite o **ajuste do nível N** de umidade a ser detectado.
 Umidade menor do que *N*: Nível lógico 0.
 Umidade maior do que *N*: Nível lógico 1.
 
-&lt;img&gt;A soil moisture sensor with a yellow/orange cable connected to an Arduino Uno board.&lt;/img&gt;
-&lt;img&gt;A breadboard circuit showing an Arduino Uno board connected to a soil moisture sensor via wires (yellow, red, black).&lt;/img&gt;
-
-&lt;watermark&gt;fritzing&lt;/watermark&gt;
-&lt;page_number&gt;10&lt;/page_number&gt;
+<!-- Imagem: A soil moisture sensor with a yellow/orange cable connected to an Arduino Uno board. -->
+<!-- Imagem: A breadboard circuit showing an Arduino Uno board connected to a soil moisture sensor via wires (yellow, red, black). -->
 
 ---
 
@@ -218,9 +209,8 @@ Umidade maior do que *N*: Nível lógico 1.
 Botão pressionado: Nível lógico 1.
 Botão não-pressionado: Nível lógico 0.
 
-&lt;img&gt;A breadboard with an Arduino Uno board, a push button, a resistor, and a LED connected by wires.&lt;/img&gt;
+<!-- Imagem: A breadboard with an Arduino Uno board, a push button, a resistor, and a LED connected by wires. -->
 
-&lt;page_number&gt;11&lt;/page_number&gt;
 
 ---
 
@@ -231,9 +221,8 @@ Botão não-pressionado: Nível lógico 0.
 
 **Eletroválvula:** Dispositivo que controla uma válvula hidráulica que bloqueia a passagem de água quando sua bobina está desenergizada e permite a sua passagem quando está energizada.
 
-&lt;img&gt;An electric valve with a transparent body showing internal components, including a solenoid coil. The valve has labels "Model: 4V410-15", "Pressure: 0.15~0.8MPa", "VALVE", "CE", and "EVI 24V DC 4.8W 200mA 100% ED IP 65 CE". It also shows ports labeled A, B, R, P, S, and a diagram indicating flow directions.&lt;/img&gt;
+<!-- Imagem: An electric valve with a transparent body showing internal components, including a solenoid coil. The valve has labels "Model: 4V410-15", "Pressure: 0.15~0.8MPa", "VALVE", "CE", and "EVI 24V DC 4.8W 200mA 100% ED IP 65 CE". It also shows ports labeled A, B, R, P, S, and a diagram indicating flow directions. -->
 
-&lt;page_number&gt;12&lt;/page_number&gt;
 
 ---
 
@@ -254,7 +243,6 @@ Um LED azul indicará quando o irrigador estiver em operação;
 
 Um LED vermelho indicará umidade acima de 80%.
 
-&lt;page_number&gt;13&lt;/page_number&gt;
 
 ---
 
@@ -277,7 +265,6 @@ Um LED vermelho indicará umidade acima de 80%.
 *   Chave desligada: C = 0
 *   Chave ligada: C = 1
 
-&lt;page_number&gt;14&lt;/page_number&gt;
 
 ---
 
@@ -303,7 +290,6 @@ Um LED vermelho indicará umidade acima de 80%.
 *   $L_V = 0$: LED apagado (umidade baixa)
 *   $L_V = 1$: LED aceso (umidade alta)
 
-&lt;page_number&gt;15&lt;/page_number&gt;
 
 ---
 
@@ -318,9 +304,8 @@ Exemplo: É impossível que a umidade seja ao mesmo tempo inferior a 40% (U₁ =
 
 O conjunto de entradas U₁ = 0 e U₂ = 1 portanto não ocorre; as saídas correspondentes são **irrelevantes**, designadas por X.
 
-&lt;img&gt;A diagram showing a "Circuito Lógico Combinacional" with three inputs labeled U1, U2, and C, and three outputs labeled E, LA, and LV.&lt;/img&gt;
+<!-- Imagem: A diagram showing a "Circuito Lógico Combinacional" with three inputs labeled U1, U2, and C, and three outputs labeled E, LA, and LV. -->
 
-&lt;page_number&gt;16&lt;/page_number&gt;
 
 ---
 
@@ -392,7 +377,6 @@ O conjunto de entradas U₁ = 0 e U₂ = 1 portanto não ocorre; as saídas corr
 
 Obs.: L<sub>A</sub> = E, visto que o LED azul funciona como um sinalizador para a irrigação.
 
-&lt;page_number&gt;17&lt;/page_number&gt;
 
 ---
 
@@ -419,7 +403,6 @@ Se tomarmos $X = 1$, teremos mais produtos canônicos, que poderiam ajudar na si
 
 Tomar então $X = 0$.
 
-&lt;page_number&gt;18&lt;/page_number&gt;
 
 ---
 
@@ -430,4 +413,3 @@ Tomar então $X = 0$.
 
 (AVA)
 
-&lt;page_number&gt;19&lt;/page_number&gt;
