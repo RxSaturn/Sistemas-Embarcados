@@ -1,6 +1,6 @@
 ## Page 1
 
-&lt;img&gt;Logo with red circle and green squares&lt;/img&gt;
+<!-- Imagem: Logo with red circle and green squares -->
 INSTITUTO FEDERAL
 DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA
 Minas Gerais
@@ -24,7 +24,6 @@ williams.nicomedes@ifmg.edu.br
 
 Projeto de circuitos combinacionais através da linguagem VHDL (Cont.)
 
-&lt;page_number&gt;2&lt;/page_number&gt;
 
 ---
 
@@ -55,7 +54,6 @@ MSB
 saida <= "0000";
 ```
 
-&lt;page_number&gt;3&lt;/page_number&gt;
 
 ---
 
@@ -81,7 +79,6 @@ O resultado desta operação é:
 
 `vet_C = 11000011`
 
-&lt;page_number&gt;4&lt;/page_number&gt;
 
 ---
 
@@ -153,7 +150,6 @@ O resultado desta operação é:
 
 Obs.: L<sub>A</sub> = E, visto que o LED azul funciona como um sinalizador para a irrigação.
 
-&lt;page_number&gt;5&lt;/page_number&gt;
 
 ---
 
@@ -180,7 +176,6 @@ Se tomarmos $X = 1$, teremos mais produtos canônicos, que poderiam ajudar na si
 
 Tomar então $X = 0$.
 
-&lt;page_number&gt;6&lt;/page_number&gt;
 
 ---
 
@@ -223,4 +218,4 @@ with expressao_teste select
 
 Condições relativas à expressao_teste
 
-&lt;img&gt;∞&lt;/img&gt;
+<!-- Imagem: ∞ -->

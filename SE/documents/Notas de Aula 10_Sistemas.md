@@ -1,6 +1,6 @@
 ## Page 1
 
-&lt;img&gt;Logo with red circle and green squares&lt;/img&gt;
+<!-- Imagem: Logo with red circle and green squares -->
 INSTITUTO FEDERAL
 DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA
 Minas Gerais
@@ -24,7 +24,6 @@ williams.nicomedes@ifmg.edu.br
 
 A linguagem VHDL
 
-&lt;page_number&gt;2&lt;/page_number&gt;
 
 ---
 
@@ -47,7 +46,6 @@ Dezenas de HDL's surgiram:
 
 Fabricantes de PLD's/FPGA's desenvolvem suas próprias linguagens.
 
-&lt;page_number&gt;3&lt;/page_number&gt;
 
 ---
 
@@ -70,7 +68,6 @@ Uso: Ferramentas EDA (Electronic Design Automation)
 
 Softwares (disponibilizados pelos fabricantes) para descrever o hardware e “traduzir” o que foi descrito pelo projetista via HDL para um circuito físico.
 
-&lt;page_number&gt;4&lt;/page_number&gt;
 
 ---
 
@@ -93,7 +90,6 @@ Não se executa instrução, mas sim constrói-se a porta lógica, que é um cir
 
 Ferramenta EDA “desenha” uma porta lógica AND no chip FPGA (determinação de z: sinais).
 
-&lt;page_number&gt;5&lt;/page_number&gt;
 
 ---
 
@@ -114,7 +110,6 @@ Tempo de propagação do sinal (elétrico) pelo caminho físico percorrido no ch
 
 O circuito foi construído no chip; a partir daí, não há sentido em falar de “execução” de instruções.
 
-&lt;page_number&gt;6&lt;/page_number&gt;
 
 ---
 
@@ -125,7 +120,8 @@ O circuito foi construído no chip; a partir daí, não há sentido em falar de 
 
 *Exemplo 2. Circuito digital (2 entradas e 2 saídas).*
 
-&lt;img&gt;
+<!--
+Imagem:
 Circuito
 a
 b
@@ -138,9 +134,8 @@ Linguagem C
 saida2 = a | b;
 saida1 = a & b;
 Figura 3.1 — Circuito composto por duas portas lógicas: AND e OR.
-&lt;/img&gt;
+-->
 
-&lt;page_number&gt;7&lt;/page_number&gt;
 
 ---
 
@@ -165,7 +160,7 @@ Interpretadas pela ferramenta EDA ao mesmo tempo
 
 Inverter a ordem: Obtemos o mesmo resultado
 
-&lt;img&gt;∞ symbol&lt;/img&gt;
+<!-- Imagem: ∞ symbol -->
 
 ---
 
@@ -179,14 +174,13 @@ Caso particular: Entradas A = 1 e B = 1:
 Diferença nos tempos de resposta
 
 Diagrama de tempo – FPGA (VHDL)
-&lt;img&gt;Diagram showing timing for FPGA with labels A, B, saida2, saida1.&lt;/img&gt;
+<!-- Imagem: Diagram showing timing for FPGA with labels A, B, saida2, saida1. -->
 
 Diagrama de tempo – Microcontrolador (Linguagem C)
-&lt;img&gt;Diagram showing timing for Microcontroller with labels A, B, saida2, saida1.&lt;/img&gt;
+<!-- Imagem: Diagram showing timing for Microcontroller with labels A, B, saida2, saida1. -->
 
 Figura 3.2 – Diagramas de tempo diferentes em FPGA e microcontrolador.
 
-&lt;page_number&gt;9&lt;/page_number&gt;
 
 ---
 
@@ -207,7 +201,6 @@ FPGA/VHDL:
 Leva em conta o tempo de propagação do sinal;
 As duas saídas comutam simultaneamente.
 
-&lt;page_number&gt;10&lt;/page_number&gt;
 
 ---
 
@@ -216,13 +209,13 @@ As duas saídas comutam simultaneamente.
 
 # Fluxo de projeto
 
-<mermaid>
+```mermaid
 graph LR
     A[Especificações] --> B[HDL]
     B --> C[RTL]
     C --> D[Síntese]
     D --> E[Fabricação]
-</mermaid>
+```
 
 1.  **Especificações** sobre o sistema digital a ser construído.
     Modelo de chip FPGA e ferramenta EDA serão empregados.
@@ -233,7 +226,6 @@ graph LR
 
 3.  **Circuito/descrição RTL (register transfer level)**: Circuito digital "genérico", i.e., não leva a tecnologia em conta (ferramenta EDA). Obtido do entendimento da ferramenta em relação ao código do projetista.
 
-&lt;page_number&gt;1&lt;/page_number&gt;
 
 ---
 
@@ -242,13 +234,13 @@ graph LR
 
 # Fluxo de projeto
 
-<mermaid>
+```mermaid
 graph LR
     A[Especificações] --> B[HDL]
     B --> C[RTL]
     C --> D[Síntese]
     D --> E[Fabricação]
-</mermaid>
+```
 
 4. **Síntese**: A partir da descrição/circuito RTL, a ferramenta gera um arquivo *netlist* (nível de portas lógicas – *gate level* – nível baixo de abstração), levando-se em conta a tecnologia disponível em (1).
 
@@ -258,7 +250,6 @@ Do arquivo *netlist* sairão as informações de posicionamento e roteamento (*p
 
 5. **Fabricação**: Implementação física (ligações no chip).
 
-&lt;page_number&gt;12&lt;/page_number&gt;
 
 ---
 
@@ -275,16 +266,16 @@ a) **Comportamental**: O projetista informa o comportamento do circuito (abstra�
 
 b) **Estrutural**: Formação do circuito desejado via estrutura hierárquica: Interligação de subsistemas (formados por circuitos menores).
 
-&lt;img&gt;
+<!--
+Imagem:
 Circuito Final (topo de hierarquia)
 Circuito 1
 Circuito 2
 Circuito 3
 Circuito 4
 Figura 3.3 – Modelamento estrutural.
-&lt;/img&gt;
+-->
 
-&lt;page_number&gt;13&lt;/page_number&gt;
 
 ---
 
@@ -305,7 +296,6 @@ Comentários:
 
 “ /* ” e “ * / ”: Comentário em múltiplas linhas.
 
-&lt;page_number&gt;14&lt;/page_number&gt;
 
 ---
 
@@ -320,9 +310,8 @@ Dividida em três unidades principais de projeto (design units):
 
 Ordem em que aparecem no código:
 
-&lt;img&gt;A diagram showing three stacked rectangles. The top rectangle contains the text "BIBLIOTECAS / PACOTES". The middle rectangle contains the text "ENTIDADE". The bottom rectangle contains the text "ARQUITETURA".&lt;/img&gt;
+<!-- Imagem: A diagram showing three stacked rectangles. The top rectangle contains the text "BIBLIOTECAS / PACOTES". The middle rectangle contains the text "ENTIDADE". The bottom rectangle contains the text "ARQUITETURA". -->
 
-&lt;page_number&gt;15&lt;/page_number&gt;
 
 ---
 
@@ -337,9 +326,8 @@ Ordem em que aparecem no código:
 
 **Arquitetura:** Funcionalidade do circuito, i.e., sua lógica interna. “O que acontece dentro do circuito?”
 
-&lt;img&gt;A diagram showing a chip with "Entidade" (Entity) at the top left, an arrow pointing to the chip, and "Arquitetura" (Architecture) at the bottom right, with an arrow pointing from the chip to the architecture.&lt;/img&gt;
+<!-- Imagem: A diagram showing a chip with "Entidade" (Entity) at the top left, an arrow pointing to the chip, and "Arquitetura" (Architecture) at the bottom right, with an arrow pointing from the chip to the architecture. -->
 
-&lt;page_number&gt;16&lt;/page_number&gt;
 
 ---
 
@@ -363,7 +351,6 @@ begin
 end nome_arquitetura;
 ```
 
-&lt;page_number&gt;17&lt;/page_number&gt;
 
 ---
 
@@ -382,7 +369,6 @@ end nome_arquitetura;
 
 **Biblioteca mais comum:** ieee
 
-&lt;page_number&gt;18&lt;/page_number&gt;
 
 ---
 
@@ -422,6 +408,7 @@ Usar *todos* os objetos do pacote numeric_std (p. ex.):
 ```vhdl
 library ieee;
 use ieee.numeric_std.all;
+```
 
 ---
 
@@ -445,7 +432,6 @@ end exemplo;
 
 Entradas/saídas do mesmo tipo p1 e p2: Podem ser declaradas juntas (separadas por vírgula);
 
-&lt;page_number&gt;20&lt;/page_number&gt;
 
 ---
 
@@ -490,7 +476,6 @@ nome_porta : modo tipo;
   </tbody>
 </table>
 
-&lt;page_number&gt;21&lt;/page_number&gt;
 
 ---
 
@@ -509,7 +494,6 @@ Sintaxe:
 
 architecture nome_arquitetura of nome_entidade is
 
-&lt;page_number&gt;22&lt;/page_number&gt;
 
 ---
 
@@ -535,7 +519,6 @@ end arq;
 
 Operador de atribuição: "<="
 
-&lt;page_number&gt;23&lt;/page_number&gt;
 
 ---
 
@@ -553,7 +536,6 @@ Regras:
 *   Não podem terminar com *underline* ou conter dois *underlines* em sequência ("_")
 *   Não utilizar os mesmos nomes de palavras reservadas.
 
-&lt;page_number&gt;24&lt;/page_number&gt;
 
 ---
 
@@ -578,4 +560,3 @@ resultado@soma
 _porta4
 sinal#2
 
-&lt;page_number&gt;25&lt;/page_number&gt;

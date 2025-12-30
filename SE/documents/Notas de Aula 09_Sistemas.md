@@ -1,6 +1,6 @@
 ## Page 1
 
-&lt;img&gt;Logo of Instituto Federal de Educação, Ciência e Tecnologia Minas Gerais Campus Bambuí&lt;/img&gt;
+<!-- Imagem: Logo of Instituto Federal de Educação, Ciência e Tecnologia Minas Gerais Campus Bambuí -->
 
 **INSTITUTO FEDERAL**
 **DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA**
@@ -28,11 +28,11 @@ williams.nicomedes@ifmg.edu.br
 
 # Sistemas digitais
 
-<mermaid>
+```mermaid
 graph LR
     A[Aquisição] --> B[Processamento]
     B --> C[Atuadores]
-</mermaid>
+```
 
 **Aquisição:** Parte integrante de um sistema responsável por captar, medir e adequar um sinal presente na natureza. Interface com a mundo natural.
 
@@ -49,11 +49,11 @@ Termistor, LDR (*light dependent resistor*, ou fotorresistor), sensor de água, 
 
 # Sistemas digitais: Aquisição
 
-<mermaid>
+```mermaid
 graph LR
     A[Aquisição] --> B[Processamento]
     B --> C[Atuadores]
-</mermaid>
+```
 
 **Aquisição:** Parte integrante de um sistema responsável por captar, medir e adequar um sinal presente na natureza. Interface com a mundo natural.
 
@@ -62,7 +62,6 @@ graph LR
     *   **Filtragem** de ruídos;
     *   **Ajuste** dos níveis de tensão (amplificação, atenuação, etc.).
 
-&lt;page_number&gt;3&lt;/page_number&gt;
 
 ---
 
@@ -71,11 +70,11 @@ graph LR
 
 # Sistemas digitais: Aquisição
 
-<mermaid>
+```mermaid
 graph LR
     A[Aquisição] --> B[Processamento]
     B --> C[Atuadores]
-</mermaid>
+```
 
 **Aquisição:** Parte integrante de um sistema responsável por captar, medir e adequar um sinal presente na natureza. Interface com a mundo natural.
 
@@ -85,7 +84,6 @@ graph LR
 
 **Conversor analógico-digital (A/D)**
 
-&lt;page_number&gt;4&lt;/page_number&gt;
 
 ---
 
@@ -94,7 +92,9 @@ graph LR
 
 # Sistema digital genérico – Diagrama de blocos
 
-&lt;img&gt;A diagram showing a generic digital system with three main stages: Acquisition, Conditioning, and Processing.
+<!--
+Imagem:
+A diagram showing a generic digital system with three main stages: Acquisition, Conditioning, and Processing.
 
 **Sistema de aquisição (Acquisition System):**
 *   **Transdução (Conversion):** Converts a physical quantity (Grandeza Física) into an analog signal.
@@ -112,14 +112,14 @@ graph LR
     *   **Sinal Digital (Digital Signal):** Input to the microcontroller, FPGA, or ASIC.
 *   **ATUADOR (Actuator):** Outputs a digital signal to control an actuator.
 
-The entire system is enclosed within a dashed box labeled "Sistema de aquisição" (Acquisition System).&lt;/img&gt;
+The entire system is enclosed within a dashed box labeled "Sistema de aquisição" (Acquisition System).
+-->
 
 *Exemplo:* Elemento responsável pelo processamento: Sinal digital, binário, níveis de tensão de 0 e 1,2 V;
 *   Sinal obtido pela etapa de transdução: Sinal analógico, amplitude varia entre 0 e 100 mV;
 *   Não há compatibilidade!
 *   O processamento do sinal só é possível graças ao tratamento recebido pelo sinal analógico nas etapas de condicionamento e digitalização.
 
-&lt;page_number&gt;5&lt;/page_number&gt;
 
 ---
 
@@ -138,7 +138,6 @@ The entire system is enclosed within a dashed box labeled "Sistema de aquisiçã
 
 *   Ex.: Produto interno bruto trimestral de um país ($T = 3$ meses), preço médio de ações ($T = 1$ dia), etc.
 
-&lt;page_number&gt;6&lt;/page_number&gt;
 
 ---
 
@@ -183,19 +182,18 @@ Eixo vertical.
 
 Recap.: Sinal analógico e sinal digital
 
-&lt;img&gt;A graph showing a continuous curve representing a signal over time. The vertical axis is labeled "g(t)" and the horizontal axis is labeled "t->". The curve starts at a low value on the left and rises to a higher value on the right.&lt;/img&gt;
+<!-- Imagem: A graph showing a continuous curve representing a signal over time. The vertical axis is labeled "g(t)" and the horizontal axis is labeled "t->". The curve starts at a low value on the left and rises to a higher value on the right. -->
 (a)
 
-&lt;img&gt;A graph showing three distinct rectangular pulses. The vertical axis is labeled "g(t)" and the horizontal axis is labeled "t->". Each pulse has a constant height and width, separated by gaps.&lt;/img&gt;
+<!-- Imagem: A graph showing three distinct rectangular pulses. The vertical axis is labeled "g(t)" and the horizontal axis is labeled "t->". Each pulse has a constant height and width, separated by gaps. -->
 (b)
 
-&lt;img&gt;A graph showing a series of short, vertical line segments rising from the baseline. The vertical axis is labeled "g(t)" and the horizontal axis is labeled "t->". The line segments get taller as they progress to the right.&lt;/img&gt;
+<!-- Imagem: A graph showing a series of short, vertical line segments rising from the baseline. The vertical axis is labeled "g(t)" and the horizontal axis is labeled "t->". The line segments get taller as they progress to the right. -->
 (c)
 
-&lt;img&gt;A graph showing a series of short, vertical line segments rising from the baseline. The vertical axis is labeled "g(t)" and the horizontal axis is labeled "t->". The line segments are shorter and more frequent than in graph (c).&lt;/img&gt;
+<!-- Imagem: A graph showing a series of short, vertical line segments rising from the baseline. The vertical axis is labeled "g(t)" and the horizontal axis is labeled "t->". The line segments are shorter and more frequent than in graph (c). -->
 (d)
 
-&lt;page_number&gt;6&lt;/page_number&gt;
 
 ---
 
@@ -216,7 +214,6 @@ Após esta etapa, o sinal ainda é analógico (pode assumir valores contidos em 
 
 **3. Codificação:** Cada nível de quantização é convertido em *código binário*.
 
-&lt;page_number&gt;10&lt;/page_number&gt;
 
 ---
 
@@ -225,7 +222,7 @@ Após esta etapa, o sinal ainda é analógico (pode assumir valores contidos em 
 
 # Digitalização dos sinais
 
-<mermaid>
+```mermaid
 graph LR
     A[Sinal Analógico] --> B[Amostragem]
     B --> C[Quantização]
@@ -241,7 +238,7 @@ graph LR
         F[01101001]
     end
     E --> F
-</mermaid>
+```
 
 Circuito responsável pela conversão do sinal analógico para digital:
 
@@ -251,7 +248,6 @@ Sistemas embarcados: Componente específico;
 
 Contido no próprio chip de um microcontrolador.
 
-&lt;page_number&gt;1&lt;/page_number&gt;
 
 ---
 
@@ -272,7 +268,6 @@ Contido no próprio chip de um microcontrolador.
 
 r = V<sub>REF</sub> / (2<sup>N</sup> - 1)
 
-&lt;page_number&gt;12&lt;/page_number&gt;
 
 ---
 
@@ -285,9 +280,8 @@ Diagrama genérico de um conversor A/D:
 
 Entrada analógica e N bits de saída.
 
-&lt;img&gt;A generic diagram showing an analog input (labeled "Entrada analógica" with "Tensão ou corrente") entering a box labeled "Conversor A/D". From the output of this box, N arrows point to the right, each labeled "N bits", leading to a vertical stack of four horizontal lines. To the right of these lines, the label "Saídas digitais número binário" is written vertically.&lt;/img&gt;
+<!-- Imagem: A generic diagram showing an analog input (labeled "Entrada analógica" with "Tensão ou corrente") entering a box labeled "Conversor A/D". From the output of this box, N arrows point to the right, each labeled "N bits", leading to a vertical stack of four horizontal lines. To the right of these lines, the label "Saídas digitais número binário" is written vertically. -->
 
-&lt;page_number&gt;13&lt;/page_number&gt;
 
 ---
 
@@ -300,9 +294,8 @@ Entrada analógica e N bits de saída.
 
 Ainda é **análogo**, i.e., pode assumir qualquer valor dentro de uma faixa contínua de valores (faixa dinâmica).
 
-&lt;img&gt;A diagram showing a continuous analog signal (a sine wave) being sampled at discrete points, represented by vertical lines with dots at their tops.&lt;/img&gt;
+<!-- Imagem: A diagram showing a continuous analog signal (a sine wave) being sampled at discrete points, represented by vertical lines with dots at their tops. -->
 
-&lt;page_number&gt;14&lt;/page_number&gt;
 
 ---
 
@@ -328,10 +321,10 @@ Valores infinitos
   </thead>
   <tbody>
     <tr>
-      <td>&lt;img&gt;A sine wave before sampling.&lt;/img&gt;</td>
-      <td>&lt;img&gt;A sine wave with many samples, indicating good sampling rate.&lt;/img&gt;</td>
-      <td>&lt;img&gt;A sine wave with fewer samples, indicating average sampling rate.&lt;/img&gt;</td>
-      <td>&lt;img&gt;A sine wave with very few samples, indicating insufficient sampling rate.&lt;/img&gt;</td>
+      <td><!-- Imagem: A sine wave before sampling. --></td>
+      <td><!-- Imagem: A sine wave with many samples, indicating good sampling rate. --></td>
+      <td><!-- Imagem: A sine wave with fewer samples, indicating average sampling rate. --></td>
+      <td><!-- Imagem: A sine wave with very few samples, indicating insufficient sampling rate. --></td>
     </tr>
     <tr>
       <td>Antes da amostragem</td>
@@ -342,7 +335,6 @@ Valores infinitos
   </tbody>
 </table>
 
-&lt;page_number&gt;15&lt;/page_number&gt;
 
 ---
 
@@ -356,7 +348,7 @@ Valores infinitos
 Sinal volta a ser definido no tempo contínuo.
 Entretanto, há a presença de “degraus.”
 
-&lt;img&gt;A diagram showing a continuous waveform on the left, transitioning to a stepped waveform on the right. In between, there's a block labeled "Amostragem" (Sampling) with an arrow pointing to another block labeled "Retenção" (Retention), which then points back to the sampling block. Below this, a label reads "Circuito Sample and Hold". The stepped waveform represents the output after sampling and retention.&lt;/img&gt;
+<!-- Imagem: A diagram showing a continuous waveform on the left, transitioning to a stepped waveform on the right. In between, there's a block labeled "Amostragem" (Sampling) with an arrow pointing to another block labeled "Retenção" (Retention), which then points back to the sampling block. Below this, a label reads "Circuito Sample and Hold". The stepped waveform represents the output after sampling and retention. -->
 
 ---
 
@@ -378,7 +370,6 @@ r = V<sub>REF</sub> / (2<sup>N</sup> – 1)
 Os valores das amostras (dentro de cada intervalo do *sample and hold*) são “arredondados” para o nível mais próximo. O sinal se torna **digital** (assume finitos valores – os níveis) no tempo contínuo.
 
 Perda de informação: Erro de quantização.
-&lt;page_number&gt;17&lt;/page_number&gt;
 
 ---
 
@@ -414,7 +405,6 @@ Perda de informação: Erro de quantização.
     *   Nível 1
     *   Nível 0
 
-&lt;page_number&gt;18&lt;/page_number&gt;
 
 ---
 
@@ -459,7 +449,6 @@ Perda de informação: Erro de quantização.
   </tr>
 </table>
 
-&lt;page_number&gt;19&lt;/page_number&gt;
 
 ---
 
@@ -546,7 +535,6 @@ Os índices de cada nível (nível 0, nível 1, ..., nível $2^N - 1$) são expr
   </tbody>
 </table>
 
-&lt;page_number&gt;20&lt;/page_number&gt;
 
 ---
 
@@ -577,7 +565,6 @@ Códigos
 110
 111
 
-&lt;page_number&gt;21&lt;/page_number&gt;
 
 ---
 
@@ -598,4 +585,3 @@ Nível: $\lfloor 3/r \rfloor = 153$
 
 Código: $(153)_{10} = 1001\ 1001$
 
-&lt;page_number&gt;22&lt;/page_number&gt;

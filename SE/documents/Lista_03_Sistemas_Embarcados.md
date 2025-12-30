@@ -1,6 +1,6 @@
 ## Page 1
 
-&lt;img&gt;Logo do IFMG Campus Bambuí&lt;/img&gt;
+<!-- Imagem: Logo do IFMG Campus Bambuí -->
 INSTITUTO FEDERAL
 DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA
 Minas Gerais
