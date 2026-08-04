@@ -22,7 +22,7 @@ jobs:
           node-version: "22"
 
       - name: Run markdownlint
-        run: npx --yes markdownlint-cli2
+        run: npx --yes markdownlint-cli2 --config .github/markdownlint.jsonc
 
   vhdl:
     name: Analyze VHDL
