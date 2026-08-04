@@ -19,14 +19,11 @@ Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
 
 ---
 
-
 ## Page 2
 
 Projeto de circuitos combinacionais através da linguagem VHDL (Cont.)
 
-
 ---
-
 
 ## Page 3
 
@@ -43,20 +40,20 @@ Projeto de circuitos combinacionais através da linguagem VHDL (Cont.)
 ```vhdl
 signal controle : bit_vector(0 to 3) := "1011";
 ```
+
 MSB
 
 ```vhdl
 signal entrada : bit_vector(7 down to 0) := "11110011";
 ```
+
 MSB
 
 ```vhdl
 saida <= "0000";
 ```
 
-
 ---
-
 
 ## Page 4
 
@@ -79,9 +76,7 @@ O resultado desta operação é:
 
 `vet_C = 11000011`
 
-
 ---
-
 
 ## Page 5
 
@@ -150,13 +145,11 @@ O resultado desta operação é:
 
 Obs.: L<sub>A</sub> = E, visto que o LED azul funciona como um sinalizador para a irrigação.
 
-
 ---
-
 
 ## Page 6
 
-3. Obtenção das expressões lógicas (I/O)
+1. Obtenção das expressões lógicas (I/O)
 
 Combinar (via *or*) os produtos canônicos (cujas condições de entrada produzam nível lógico 1 na saída)
 
@@ -176,9 +169,7 @@ Se tomarmos $X = 1$, teremos mais produtos canônicos, que poderiam ajudar na si
 
 Tomar então $X = 0$.
 
-
 ---
-
 
 ## Page 7
 
@@ -195,7 +186,6 @@ Tarefa trabalhosa (inviável, para o caso de circuitos mais complexos).
 *(Sem se preocupar com operadores lógicos e expressões booleanas).*
 
 ---
-
 
 ## Page 8
 

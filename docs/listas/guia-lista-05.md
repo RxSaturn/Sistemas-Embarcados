@@ -14,7 +14,7 @@ arquivo esquemático do Quartus II. O bloco vem da Lista de Exercícios nº 5.
 O bloco tem três portas:
 
 | Porta | Direção | Tipo | Largura |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | `entr[2..0]` | entrada | barramento | 3 bits |
 | `enable` | entrada | fio simples | 1 bit |
 | `saidas[7..0]` | saída | barramento | 8 bits |
@@ -80,7 +80,7 @@ Para o sinal `enable`:
 > Um pino do esquemático não pode ter o mesmo nome de uma porta da entity VHDL.
 
 | Regra | Errado | Certo |
-|---|---|---|
+| --- | --- | --- |
 | Não repita o nome da porta da entity | `entr[2..0]` | `Ent[2..0]` |
 | Não repita o nome da porta da entity | `enable` | `Habilita` |
 | Use underscore para diferenciar | `saidas[7..0]` | `Saidas_[7..0]` |
@@ -88,14 +88,14 @@ Para o sinal `enable`:
 O Quartus II e o VHDL escrevem a largura de um vetor de formas diferentes:
 
 | Ferramenta | Notação |
-|---|---|
+| --- | --- |
 | VHDL | `(N downto 0)` |
 | Quartus II | `[N..0]` |
 
 ## Tipos de conexão
 
 | Tipo | Largura | Aparência no Quartus II | Usado para |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Fio simples | 1 bit | linha fina | `enable` e `Habilita` |
 | Barramento | vários bits | linha grossa | `entr[2..0]` e `saidas[7..0]` |
 

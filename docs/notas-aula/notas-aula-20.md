@@ -19,7 +19,6 @@ Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
 
 ---
 
-
 ## Page 2
 
 Projeto de circuitos sequenciais através da linguagem VHDL:
@@ -28,9 +27,7 @@ Projeto de circuitos sequenciais através da linguagem VHDL:
 
 [2]. Contadores.
 
-
 ---
-
 
 ## Page 3
 
@@ -53,7 +50,6 @@ Estados da saída ao longo do tempo: 0, 1, 2, 3, ...
 A saída permanece no estado durante um ciclo do clock (independentemente das entradas).
 
 ---
-
 
 ## Page 4
 
@@ -95,9 +91,7 @@ Flip-flop tipo JK – Tabela de transição. Estado atual: Q(n).
 
 <!-- Imagem: A circuit diagram showing a clock signal (CLK) connected to a flip-flop. The flip-flop has two inputs labeled J and K, and two outputs labeled Q and $\overline{Q}$. The J input is connected to one side of the clock, and the K input is connected to the other side. -->
 
-
 ---
-
 
 ## Page 5
 
@@ -139,9 +133,7 @@ Flip-flop tipo JK – Tabela de transição. Estado atual: Q(n).
 
 <!-- Imagem: A timing diagram illustrating the behavior of a JK flip-flop over time. The diagram shows four columns labeled J, K, CLK, and Q, each with multiple horizontal lines representing different states (0 or 1) at various points in time. The CLK signal is shown as a series of pulses, and the Q output transitions accordingly. A horizontal arrow labeled "Tempo" indicates the passage of time. -->
 
-
 ---
-
 
 ## Page 6
 
@@ -180,7 +172,6 @@ begin
 
 ---
 
-
 ## Page 7
 
 # FF tipo JK - Bloco lógico: Código VHDL
@@ -206,9 +197,7 @@ Ex.: Salvar como Codigo_01.vhd
 47
 ```
 
-
 ---
-
 
 ## Page 8
 
@@ -226,22 +215,19 @@ Variável auxiliar Qstate.
 
 ---
 
-
 ## Page 9
 
 # FF tipo JK - Bloco lógico: Código VHDL
 
-*   Geração do bloco;
-*   Inserção no esquemático (Nome: Esquematico_01.bdf);
-*   Inclusão das entrada e saídas;
-*   Set as Top-Level Entity;
-*   Compilação.
+* Geração do bloco;
+* Inserção no esquemático (Nome: Esquematico_01.bdf);
+* Inclusão das entrada e saídas;
+* Set as Top-Level Entity;
+* Compilação.
 
 <!-- Imagem: A schematic diagram showing inputs J, K, and CLOCK connected to a block labeled "BlocoFF_JK". Inside this block, there's an instance of a component with pins J, K, clk, and Q. The output pin Q is connected to another block. -->
 
-
 ---
-
 
 ## Page 10
 
@@ -257,9 +243,7 @@ Salvar como Waveform_01.vwf.
 
 <!-- Imagem: Waveform diagram showing CLOCK, J, K, and Q signals with values B0 and B1 over time. -->
 
-
 ---
-
 
 ## Page 11
 
@@ -282,7 +266,6 @@ Timing diagram illustrating the operation of the counter. It shows:
 
 ---
 
-
 ## Page 12
 
 Contador MOD 8: Blocos
@@ -293,9 +276,7 @@ Três instâncias (inst, inst1, inst2).
 
 <!-- Imagem: Circuit Diagram showing three instances of BlocoFF_JK connected to form a counter. Each instance has J, K, clk inputs and Q output. The outputs are connected to AND gates labeled 00, 01, and 02. -->
 
-
 ---
-
 
 ## Page 13
 
@@ -309,9 +290,7 @@ Especificar Esquematico_02.bdf como a entidade de máximo nível: Painel *Projec
 
 <!-- Imagem: Screenshot of Project Navigator window with files listed on the left. A right-click context menu is open over "Esquematico_2.bdf", showing options like Open, Remove File from Project, Set as Top-Level Entity (highlighted with Ctrl+Shift+J), and Properties... -->
 
-
 ---
-
 
 ## Page 14
 
@@ -354,9 +333,7 @@ Entrada VCC = 1. (Salvar como Waveform_02.vwf)
 
 <!-- Imagem: Timing diagram illustrating clock pulses, Q0, Q1, Q2, and count states. -->
 
-
 ---
-
 
 ## Page 15
 
@@ -364,20 +341,18 @@ Entrada VCC = 1. (Salvar como Waveform_02.vwf)
 
 **Obs.:** Dentro do mesmo projeto:
 
-*   Waveform_01.vwf associado a Esquematico_01.bdf;
-*   Waveform_02.vwf associado a Esquematico_02.bdf;
+* Waveform_01.vwf associado a Esquematico_01.bdf;
+* Waveform_02.vwf associado a Esquematico_02.bdf;
 
 Escolher o esquemático (1 ou 2);
 
-*   Set as Top-Level Entity;
+* Set as Top-Level Entity;
 
-*   Selecionar a waveform correspondente;
+* Selecionar a waveform correspondente;
 
-*   (Não precisa compilar de novo).
-
+* (Não precisa compilar de novo).
 
 ---
-
 
 ## Page 16
 

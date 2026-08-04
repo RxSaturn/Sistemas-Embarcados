@@ -23,7 +23,6 @@ Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
 
 ---
 
-
 ## Page 2
 
 Projeto de circuitos combinacionais através da linguagem VHDL:
@@ -32,9 +31,7 @@ Projeto de circuitos combinacionais através da linguagem VHDL:
 
 [2]. Decodificadores.
 
-
 ---
-
 
 ## Page 3
 
@@ -42,14 +39,12 @@ Projeto de circuitos combinacionais através da linguagem VHDL:
 
 **Processos:** Regiões de códigos **sequenciais**:
 
-*   Comandos avaliados sequencialmente;
-*   Respeitando a **ordem** na qual estão localizados no código.
+* Comandos avaliados sequencialmente;
+* Respeitando a **ordem** na qual estão localizados no código.
 
 **VHDL:** Comandos concorrentes.
 
-
 ---
-
 
 ## Page 4
 
@@ -71,9 +66,7 @@ end func;
 
 Erro: Na região ‘concorrente’ do código (fora de um processo), a descrição envia dois sinais diferentes para a mesma saída s.
 
-
 ---
-
 
 ## Page 5
 
@@ -98,13 +91,12 @@ end func;
 
 (a, b): **Lista de sensibilidade**: Sinais responsáveis por acionar a execução do processo.
 
-- Execução sequencial;
-- Saída s atualizada só ao término do processo.
+* Execução sequencial;
+* Saída s atualizada só ao término do processo.
 
 Executa os comandos sequenciais mas **não atualiza o valor de s enquanto o processo está em andamento**. Resultado: s = a and b.
 
 ---
-
 
 ## Page 6
 
@@ -122,9 +114,7 @@ Comandos sequenciais **dentro de processos**.
 
 (não usar atribuição selecionada with...select)
 
-
 ---
-
 
 ## Page 7
 
@@ -145,7 +135,6 @@ Estrutura *if-then-else*: **Dentro de processos.**
 (Se trata de construção sequencial.)
 
 ---
-
 
 ## Page 8
 
@@ -183,7 +172,6 @@ graph LR
 
 ---
 
-
 ## Page 9
 
 # Decodificadores
@@ -196,9 +184,7 @@ Para N bits de entrada, há 2^N combinações possíveis, e portanto M = 2^N sa�
 
 <!-- Imagem: A diagram showing a "Decodificador" (Decoder) with N input lines labeled E0, E1, E2, ..., EN-1 on the left, and M output lines labeled S0, S1, S2, ..., SM-1 on the right. -->
 
-
 ---
-
 
 ## Page 10
 
@@ -259,9 +245,7 @@ Para N bits de entrada, há 2^N combinações possíveis, e portanto M = 2^N sa�
 
 *Obs.:* Os valores não indicados nas saída correspondem a um bit **0**.
 
-
 ---
-
 
 ## Page 11
 
@@ -338,9 +322,7 @@ Para N bits de entrada, há 2^N combinações possíveis, e portanto M = 2^N sa�
 
 *Obs.:* Quando o sinal de controle **ENABLE = 0**, o decodificador **não funciona** (i.e., não seleciona nenhuma saída), mantendo todas as saídas em **0**, independentemente das entradas.
 
-
 ---
-
 
 ## Page 12
 
@@ -356,9 +338,7 @@ No arquivo esquemático:
 
 `nome_sinal[3..0]`
 
-
 ---
-
 
 ## Page 13
 

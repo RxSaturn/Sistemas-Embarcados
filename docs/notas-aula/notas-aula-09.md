@@ -23,7 +23,6 @@ Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
 
 ---
 
-
 ## Page 2
 
 # Sistemas digitais
@@ -36,14 +35,13 @@ graph LR
 
 **Aquisição:** Parte integrante de um sistema responsável por captar, medir e adequar um sinal presente na natureza. Interface com a mundo natural.
 
-1.  **Transdução:** Processo que transforma uma grandeza física em um sinal elétrico **proporcional** à sua magnitude. Elemento principal: **Sensores**.
+1. **Transdução:** Processo que transforma uma grandeza física em um sinal elétrico **proporcional** à sua magnitude. Elemento principal: **Sensores**.
 
 *Ex.:* Sensores resistivos (*R varia com a grandeza a ser medida*), capacitivos, indutivos, piezoeletricos, etc.
 
 Termistor, LDR (*light dependent resistor*, ou fotorresistor), sensor de água, etc.
 
 ---
-
 
 ## Page 3
 
@@ -57,14 +55,12 @@ graph LR
 
 **Aquisição:** Parte integrante de um sistema responsável por captar, medir e adequar um sinal presente na natureza. Interface com a mundo natural.
 
-1.  **Transdução**;
-2.  **Condicionamento**: Recebe o sinal proveniente da etapa de transdução e realiza o tratamento necessário:
-    *   **Filtragem** de ruídos;
-    *   **Ajuste** dos níveis de tensão (amplificação, atenuação, etc.).
-
+1. **Transdução**;
+2. **Condicionamento**: Recebe o sinal proveniente da etapa de transdução e realiza o tratamento necessário:
+    * **Filtragem** de ruídos;
+    * **Ajuste** dos níveis de tensão (amplificação, atenuação, etc.).
 
 ---
-
 
 ## Page 4
 
@@ -78,15 +74,13 @@ graph LR
 
 **Aquisição:** Parte integrante de um sistema responsável por captar, medir e adequar um sinal presente na natureza. Interface com a mundo natural.
 
-1.  **Transdução**;
-2.  **Condicionamento**;
-3.  **Digitalização**: Responsável por transformar o sinal analógico (após o condicionamento) em digital.
+1. **Transdução**;
+2. **Condicionamento**;
+3. **Digitalização**: Responsável por transformar o sinal analógico (após o condicionamento) em digital.
 
 **Conversor analógico-digital (A/D)**
 
-
 ---
-
 
 ## Page 5
 
@@ -116,13 +110,12 @@ The entire system is enclosed within a dashed box labeled "Sistema de aquisiçã
 -->
 
 *Exemplo:* Elemento responsável pelo processamento: Sinal digital, binário, níveis de tensão de 0 e 1,2 V;
-*   Sinal obtido pela etapa de transdução: Sinal analógico, amplitude varia entre 0 e 100 mV;
-*   Não há compatibilidade!
-*   O processamento do sinal só é possível graças ao tratamento recebido pelo sinal analógico nas etapas de condicionamento e digitalização.
 
+* Sinal obtido pela etapa de transdução: Sinal analógico, amplitude varia entre 0 e 100 mV;
+* Não há compatibilidade!
+* O processamento do sinal só é possível graças ao tratamento recebido pelo sinal analógico nas etapas de condicionamento e digitalização.
 
 ---
-
 
 ## Page 6
 
@@ -130,17 +123,15 @@ The entire system is enclosed within a dashed box labeled "Sistema de aquisiçã
 
 **Sinal no tempo contínuo:** Especificado para todo $t \in \mathbb{R}$.
 
-*   Sinais de áudio e de vídeo;
-*   Maior parte daquilo que se pode medir na natureza:
-    *   Temperatura, pressão, umidade, etc.
+* Sinais de áudio e de vídeo;
+* Maior parte daquilo que se pode medir na natureza:
+  * Temperatura, pressão, umidade, etc.
 
 **Sinal no tempo discreto:** Especificado apenas para instantes discretos $t = nT$, onde $n \in \mathbb{Z}$ e $T \in \mathbb{R}$ é o período.
 
-*   Ex.: Produto interno bruto trimestral de um país ($T = 3$ meses), preço médio de ações ($T = 1$ dia), etc.
-
+* Ex.: Produto interno bruto trimestral de um país ($T = 3$ meses), preço médio de ações ($T = 1$ dia), etc.
 
 ---
-
 
 ## Page 7
 
@@ -160,7 +151,6 @@ Ex.: Sinal binário ($M = 2$).
 
 ---
 
-
 ## Page 8
 
 # Recap.: Sinal analógico e sinal digital
@@ -176,7 +166,6 @@ Refere-se aos valores da variável dependente:
 Eixo vertical.
 
 ---
-
 
 ## Page 9
 
@@ -194,9 +183,7 @@ Recap.: Sinal analógico e sinal digital
 <!-- Imagem: A graph showing a series of short, vertical line segments rising from the baseline. The vertical axis is labeled "g(t)" and the horizontal axis is labeled "t->". The line segments are shorter and more frequent than in graph (c). -->
 (d)
 
-
 ---
-
 
 ## Page 10
 
@@ -214,9 +201,7 @@ Após esta etapa, o sinal ainda é analógico (pode assumir valores contidos em 
 
 **3. Codificação:** Cada nível de quantização é convertido em *código binário*.
 
-
 ---
-
 
 ## Page 11
 
@@ -248,9 +233,7 @@ Sistemas embarcados: Componente específico;
 
 Contido no próprio chip de um microcontrolador.
 
-
 ---
-
 
 ## Page 12
 
@@ -268,9 +251,7 @@ Contido no próprio chip de um microcontrolador.
 
 r = V<sub>REF</sub> / (2<sup>N</sup> - 1)
 
-
 ---
-
 
 ## Page 13
 
@@ -282,9 +263,7 @@ Entrada analógica e N bits de saída.
 
 <!-- Imagem: A generic diagram showing an analog input (labeled "Entrada analógica" with "Tensão ou corrente") entering a box labeled "Conversor A/D". From the output of this box, N arrows point to the right, each labeled "N bits", leading to a vertical stack of four horizontal lines. To the right of these lines, the label "Saídas digitais número binário" is written vertically. -->
 
-
 ---
-
 
 ## Page 14
 
@@ -296,9 +275,7 @@ Ainda é **análogo**, i.e., pode assumir qualquer valor dentro de uma faixa con
 
 <!-- Imagem: A diagram showing a continuous analog signal (a sine wave) being sampled at discrete points, represented by vertical lines with dots at their tops. -->
 
-
 ---
-
 
 ## Page 15
 
@@ -335,9 +312,7 @@ Valores infinitos
   </tbody>
 </table>
 
-
 ---
-
 
 ## Page 16
 
@@ -351,7 +326,6 @@ Entretanto, há a presença de “degraus.”
 <!-- Imagem: A diagram showing a continuous waveform on the left, transitioning to a stepped waveform on the right. In between, there's a block labeled "Amostragem" (Sampling) with an arrow pointing to another block labeled "Retenção" (Retention), which then points back to the sampling block. Below this, a label reads "Circuito Sample and Hold". The stepped waveform represents the output after sampling and retention. -->
 
 ---
-
 
 ## Page 17
 
@@ -373,41 +347,38 @@ Perda de informação: Erro de quantização.
 
 ---
 
-
 ## Page 18
 
 # Conversor A/D – 2 – Quantização
 
 ## Exemplos:
 
-*   $N = 2$ bits: $2^N = 2^2 = 4$ níveis, numerados de 0 a 3.
-*   $N = 3$ bits: $2^N = 2^3 = 8$ níveis, numerados de 0 a 7.
+* $N = 2$ bits: $2^N = 2^2 = 4$ níveis, numerados de 0 a 3.
+* $N = 3$ bits: $2^N = 2^3 = 8$ níveis, numerados de 0 a 7.
 
 ## Antes da aproximação dos valores
 
 ### 4 níveis de quantização
 
-*   Níveis de Quantização
-    *   Nível 3
-    *   Nível 2
-    *   Nível 1
-    *   Nível 0
+* Níveis de Quantização
+  * Nível 3
+  * Nível 2
+  * Nível 1
+  * Nível 0
 
 ### 8 níveis de quantização
 
-*   Níveis de Quantização
-    *   Nível 7
-    *   Nível 6
-    *   Nível 5
-    *   Nível 4
-    *   Nível 3
-    *   Nível 2
-    *   Nível 1
-    *   Nível 0
-
+* Níveis de Quantização
+  * Nível 7
+  * Nível 6
+  * Nível 5
+  * Nível 4
+  * Nível 3
+  * Nível 2
+  * Nível 1
+  * Nível 0
 
 ---
-
 
 ## Page 19
 
@@ -415,8 +386,8 @@ Perda de informação: Erro de quantização.
 
 ## Exemplos:
 
-*   $N = 2$ bits: $2^N = 2^2 = 4$ níveis, numerados de 0 a 3.
-*   $N = 3$ bits: $2^N = 2^3 = 8$ níveis, numerados de 0 a 7.
+* $N = 2$ bits: $2^N = 2^2 = 4$ níveis, numerados de 0 a 3.
+* $N = 3$ bits: $2^N = 2^3 = 8$ níveis, numerados de 0 a 7.
 
 ## Após a aproximação dos valores
 
@@ -449,9 +420,7 @@ Perda de informação: Erro de quantização.
   </tr>
 </table>
 
-
 ---
-
 
 ## Page 20
 
@@ -535,9 +504,7 @@ Os índices de cada nível (nível 0, nível 1, ..., nível $2^N - 1$) são expr
   </tbody>
 </table>
 
-
 ---
-
 
 ## Page 21
 
@@ -565,9 +532,7 @@ Códigos
 110
 111
 
-
 ---
-
 
 ## Page 22
 
@@ -584,4 +549,3 @@ Resolução: $r = \frac{V_{REF}}{2^N - 1} = \frac{5}{256-1} = \frac{5}{255} = 0,
 Nível: $\lfloor 3/r \rfloor = 153$
 
 Código: $(153)_{10} = 1001\ 1001$
-

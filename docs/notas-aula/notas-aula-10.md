@@ -19,14 +19,11 @@ Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
 
 ---
 
-
 ## Page 2
 
 A linguagem VHDL
 
-
 ---
-
 
 ## Page 3
 
@@ -46,9 +43,7 @@ Dezenas de HDL's surgiram:
 
 Fabricantes de PLD's/FPGA's desenvolvem suas próprias linguagens.
 
-
 ---
-
 
 ## Page 4
 
@@ -68,9 +63,7 @@ Uso: Ferramentas EDA (Electronic Design Automation)
 
 Softwares (disponibilizados pelos fabricantes) para descrever o hardware e “traduzir” o que foi descrito pelo projetista via HDL para um circuito físico.
 
-
 ---
-
 
 ## Page 5
 
@@ -90,9 +83,7 @@ Não se executa instrução, mas sim constrói-se a porta lógica, que é um cir
 
 Ferramenta EDA “desenha” uma porta lógica AND no chip FPGA (determinação de z: sinais).
 
-
 ---
-
 
 ## Page 6
 
@@ -110,9 +101,7 @@ Tempo de propagação do sinal (elétrico) pelo caminho físico percorrido no ch
 
 O circuito foi construído no chip; a partir daí, não há sentido em falar de “execução” de instruções.
 
-
 ---
-
 
 ## Page 7
 
@@ -136,9 +125,7 @@ saida1 = a & b;
 Figura 3.1 — Circuito composto por duas portas lógicas: AND e OR.
 -->
 
-
 ---
-
 
 ## Page 8
 
@@ -164,7 +151,6 @@ Inverter a ordem: Obtemos o mesmo resultado
 
 ---
 
-
 ## Page 9
 
 # PLD's vs. Microcontroladores
@@ -181,9 +167,7 @@ Diagrama de tempo – Microcontrolador (Linguagem C)
 
 Figura 3.2 – Diagramas de tempo diferentes em FPGA e microcontrolador.
 
-
 ---
-
 
 ## Page 10
 
@@ -201,9 +185,7 @@ FPGA/VHDL:
 Leva em conta o tempo de propagação do sinal;
 As duas saídas comutam simultaneamente.
 
-
 ---
-
 
 ## Page 11
 
@@ -217,18 +199,16 @@ graph LR
     D --> E[Fabricação]
 ```
 
-1.  **Especificações** sobre o sistema digital a ser construído.
+1. **Especificações** sobre o sistema digital a ser construído.
     Modelo de chip FPGA e ferramenta EDA serão empregados.
 
     Diferentes materiais, tensões, tempos propagação dos sinais, quantidade de blocos lógicos disponíveis, etc.
 
-2.  **Código HDL**: Descrição do comportamento do circuito (abstração alta), sem se preocupar com o hardware.
+2. **Código HDL**: Descrição do comportamento do circuito (abstração alta), sem se preocupar com o hardware.
 
-3.  **Circuito/descrição RTL (register transfer level)**: Circuito digital "genérico", i.e., não leva a tecnologia em conta (ferramenta EDA). Obtido do entendimento da ferramenta em relação ao código do projetista.
-
+3. **Circuito/descrição RTL (register transfer level)**: Circuito digital "genérico", i.e., não leva a tecnologia em conta (ferramenta EDA). Obtido do entendimento da ferramenta em relação ao código do projetista.
 
 ---
-
 
 ## Page 12
 
@@ -242,17 +222,15 @@ graph LR
     D --> E[Fabricação]
 ```
 
-4. **Síntese**: A partir da descrição/circuito RTL, a ferramenta gera um arquivo *netlist* (nível de portas lógicas – *gate level* – nível baixo de abstração), levando-se em conta a tecnologia disponível em (1).
+1. **Síntese**: A partir da descrição/circuito RTL, a ferramenta gera um arquivo *netlist* (nível de portas lógicas – *gate level* – nível baixo de abstração), levando-se em conta a tecnologia disponível em (1).
 
 Do arquivo *netlist* sairão as informações de posicionamento e roteamento (*place and route*) que serão utilizadas para as interligações implementadas no FPGA.
 
 *"Para implementar o circuito RTL neste chip específico eu preciso interligar..."*
 
-5. **Fabricação**: Implementação física (ligações no chip).
-
+1. **Fabricação**: Implementação física (ligações no chip).
 
 ---
-
 
 ## Page 13
 
@@ -276,9 +254,7 @@ Circuito 4
 Figura 3.3 – Modelamento estrutural.
 -->
 
-
 ---
-
 
 ## Page 14
 
@@ -294,11 +270,9 @@ Comentários:
 
 “ -- ”: Única linha de comentário;
 
-“ /* ” e “ * / ”: Comentário em múltiplas linhas.
-
+“ /*” e “* / ”: Comentário em múltiplas linhas.
 
 ---
-
 
 ## Page 15
 
@@ -312,9 +286,7 @@ Ordem em que aparecem no código:
 
 <!-- Imagem: A diagram showing three stacked rectangles. The top rectangle contains the text "BIBLIOTECAS / PACOTES". The middle rectangle contains the text "ENTIDADE". The bottom rectangle contains the text "ARQUITETURA". -->
 
-
 ---
-
 
 ## Page 16
 
@@ -328,9 +300,7 @@ Ordem em que aparecem no código:
 
 <!-- Imagem: A diagram showing a chip with "Entidade" (Entity) at the top left, an arrow pointing to the chip, and "Arquitetura" (Architecture) at the bottom right, with an arrow pointing from the chip to the architecture. -->
 
-
 ---
-
 
 ## Page 17
 
@@ -351,9 +321,7 @@ begin
 end nome_arquitetura;
 ```
 
-
 ---
-
 
 ## Page 18
 
@@ -369,9 +337,7 @@ end nome_arquitetura;
 
 **Biblioteca mais comum:** ieee
 
-
 ---
-
 
 ## Page 19
 
@@ -405,13 +371,13 @@ end nome_arquitetura;
 </table>
 
 Usar *todos* os objetos do pacote numeric_std (p. ex.):
+
 ```vhdl
 library ieee;
 use ieee.numeric_std.all;
 ```
 
 ---
-
 
 ## Page 20
 
@@ -432,9 +398,7 @@ end exemplo;
 
 Entradas/saídas do mesmo tipo p1 e p2: Podem ser declaradas juntas (separadas por vírgula);
 
-
 ---
-
 
 ## Page 21
 
@@ -476,9 +440,7 @@ nome_porta : modo tipo;
   </tbody>
 </table>
 
-
 ---
-
 
 ## Page 22
 
@@ -494,9 +456,7 @@ Sintaxe:
 
 architecture nome_arquitetura of nome_entidade is
 
-
 ---
-
 
 ## Page 23
 
@@ -519,9 +479,7 @@ end arq;
 
 Operador de atribuição: "<="
 
-
 ---
-
 
 ## Page 24
 
@@ -531,14 +489,12 @@ Nomes dados a sinais, variáveis, portas, processos, etc.
 
 Regras:
 
-*   Podem conter apenas letras do alfabeto (A, B, C,..., a, b, c,...), *underline "_"*, e números decimais (0, 1,..., 9).
-*   Sempre começar com letras.
-*   Não podem terminar com *underline* ou conter dois *underlines* em sequência ("_")
-*   Não utilizar os mesmos nomes de palavras reservadas.
-
+* Podem conter apenas letras do alfabeto (A, B, C,..., a, b, c,...), *underline "_"*, e números decimais (0, 1,..., 9).
+* Sempre começar com letras.
+* Não podem terminar com *underline* ou conter dois *underlines* em sequência ("_")
+* Não utilizar os mesmos nomes de palavras reservadas.
 
 ---
-
 
 ## Page 25
 
@@ -559,4 +515,3 @@ bus_
 resultado@soma
 _porta4
 sinal#2
-

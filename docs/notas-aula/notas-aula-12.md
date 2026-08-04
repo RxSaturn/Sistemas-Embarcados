@@ -19,14 +19,11 @@ Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
 
 ---
 
-
 ## Page 2
 
 A linguagem VHDL
 
-
 ---
-
 
 ## Page 3
 
@@ -40,16 +37,15 @@ graph LR
     D --> E[Fabricação]
 ```
 
-1.  **Especificações** sobre o sistema digital a ser construído (circ. comb., seq,...). Modelo de chip FPGA e ferramenta EDA a serem empregados.
+1. **Especificações** sobre o sistema digital a ser construído (circ. comb., seq,...). Modelo de chip FPGA e ferramenta EDA a serem empregados.
 
     Diferentes materiais, tensões, tempos propagação dos sinais, quantidade de blocos lógicos disponíveis, etc.
 
-2.  **Código HDL**: Descrição do comportamento do circuito (abstração alta), sem se preocupar com o hardware.
+2. **Código HDL**: Descrição do comportamento do circuito (abstração alta), sem se preocupar com o hardware.
 
-3.  **Circuito/descrição RTL** (*register transfer level*): Circuito digital “genérico”, i.e., não leva a tecnologia em conta (ferramenta EDA). Obtido do entendimento da ferramenta em relação ao código do projetista.
+3. **Circuito/descrição RTL** (*register transfer level*): Circuito digital “genérico”, i.e., não leva a tecnologia em conta (ferramenta EDA). Obtido do entendimento da ferramenta em relação ao código do projetista.
 
 ---
-
 
 ## Page 4
 
@@ -63,17 +59,15 @@ graph LR
     D --> E[Fabricação]
 ```
 
-4. **Síntese**: A partir da descrição/circuito RTL, a ferramenta gera um arquivo *netlist* (nível de portas lógicas – *gate level* – nível baixo de abstração), levando-se em conta a tecnologia disponível em (1).
+1. **Síntese**: A partir da descrição/circuito RTL, a ferramenta gera um arquivo *netlist* (nível de portas lógicas – *gate level* – nível baixo de abstração), levando-se em conta a tecnologia disponível em (1).
 
 Do arquivo *netlist* sairão as informações de posicionamento e roteamento (*place and route*) que serão utilizadas para as interligações implementadas no FPGA.
 
 *"Para implementar o circuito RTL neste chip específico eu preciso interligar..."*
 
-5. **Fabricação**: Implementação física (ligações no chip).
-
+1. **Fabricação**: Implementação física (ligações no chip).
 
 ---
-
 
 ## Page 5
 
@@ -87,9 +81,7 @@ Ordem em que aparecem no código:
 
 <!-- Imagem: A diagram showing three stacked rectangular blocks. The top block says "BIBLIOTECAS / PACOTES". The middle block says "ENTIDADE". The bottom block says "ARQUITETURA". -->
 
-
 ---
-
 
 ## Page 6
 
@@ -103,9 +95,7 @@ Ordem em que aparecem no código:
 
 <!-- Imagem: A diagram showing a chip with "Entidade" (Entity) at the top left and "Arquitetura" (Architecture) at the bottom right, indicating the relationship between the entity and architecture. -->
 
-
 ---
-
 
 ## Page 7
 
@@ -126,7 +116,6 @@ Importa a biblioteca pelo comando `library` e indica o seu uso pelo comando `use
 
 ---
 
-
 ## Page 8
 
 # Estrutura básica dos códigos VHDL
@@ -135,12 +124,12 @@ Importa a biblioteca pelo comando `library` e indica o seu uso pelo comando `use
 
 ### Tipos básicos:
 
-*   bit, std_logic, boolean, physical.
+* bit, std_logic, boolean, physical.
 
 ### Concatenação de elementos:
 
-*   bit_vector(0 to 3),
-*   std_logic_vector(0 to 4).
+* bit_vector(0 to 3),
+* std_logic_vector(0 to 4).
 
 std_logic é mais geral do que bit
 
@@ -149,7 +138,6 @@ Inclui tipos como indeterminado, “1” forte, “1” fraco, “0” forte, �
 <!-- Imagem: ∞ symbol -->
 
 ---
-
 
 ## Page 9
 
@@ -167,13 +155,12 @@ Não são obrigatórias.
 
 *Ex.:* Código VHDL para *documentar* o funcionamento de um circuito.
 
-
 ---
-
 
 ## Page 10
 
 Aula:
+
 1) Produzir/testar um esquemático (circuitos combinacionais).
 2) Depois, VHDL.
 
@@ -181,14 +168,15 @@ Objetivo: Verificar como podemos correlacionar as duas coisas (Diagramas esquem�
 
 Curso (por enquanto):
 Arquivos de projeto (*Design Files*) limitados a:
-*   *Block Diagram/Schematic File*
-*   *VHDL File*
+
+* *Block Diagram/Schematic File*
+* *VHDL File*
 
 Arquivos de verificação (*Verification/Debugging Files*):
-*   *University VWF (vector waveform)*: Formas de onda.
+
+* *University VWF (vector waveform)*: Formas de onda.
 
 ---
-
 
 ## Page 11
 
@@ -204,9 +192,7 @@ O Quartus II “entende” que vamos de fato passar o circuito para o PLD. Detal
 
 Quartus II não é ferramenta SPICE.
 
-
 ---
-
 
 ## Page 12
 
@@ -222,9 +208,7 @@ Dividir para conquistar. Produzir pequenos blocos para diferentes funções e de
 
 Modelagem estrutural (Notas de Aula 10).
 
-
 ---
-
 
 ## Page 13
 
@@ -240,9 +224,7 @@ Maneira 1: Posiciona o cursor na entrada/saída, até ele se tornar uma cruz. Ar
 
 Maneira 2: Arrastar o objeto; Encostar os pinos; Soltar o botão do mouse; Arrastar o objeto de volta à sua posição original.
 
-
 ---
-
 
 ## Page 14
 
@@ -263,9 +245,7 @@ Diferentes nomes, sempre que possível.
 
 *Project Navigator > Arquivo esquematico > Right-click > Set as Top-Level Entity*
 
-
 ---
-
 
 ## Page 15
 
@@ -275,9 +255,7 @@ Circuitos Combinacionais:
 
 Função Booleana z = A · B + C̄.
 
-
 ---
-
 
 ## Page 16
 
@@ -289,9 +267,7 @@ Verification/Debugging Files: *University Program VWF.*
 
 <!-- Imagem: Screenshot showing three instances of the "New" dialog box from Quartus II. Each instance lists various file types under "New Quartus II Project" with sections like "Design Files", "Memory Files", "Verification/Debugging Files", and "Other Files". The "Verification/Debugging Files" section includes "In-System Sources and Probes File", "Logic Analyzer Interface File", "SignalTap II Logic Analyzer File", and "University Program VWF". The "Other Files" section includes "AHDL Include File", "Block Symbol File", "Chain Description File", "Synopsys Design Constraints File", and "Text File". Each dialog has buttons labeled "OK", "Cancel", and "Help". -->
 
-
 ---
-
 
 ## Page 17
 
@@ -301,9 +277,7 @@ Circuito (diagrama esquemático) e bloco lógico.
 
 <!-- Imagem: A schematic diagram showing inputs A, B, and C connected to a NOT gate (inst2), an AND gate (AND2), and an OR gate (OR2). The output of the AND gate is connected to the OR gate. The output of the OR gate is labeled D. Below this circuit, a block labeled "BlocoComb" has three inputs (in1, in2, in3) and one output (out1). The output out1 is connected to another output labeled E. -->
 
-
 ---
-
 
 ## Page 18
 
@@ -333,7 +307,6 @@ end Funcionamento;
 
 ---
 
-
 ## Page 19
 
 # Função Booleana z = A · B + C
@@ -353,9 +326,7 @@ Geração do bloco, inserção no esquemático e compilação:
 Analyze Current File
 File > Create/Update > Create Symbol Files (...)
 
-
 ---
-
 
 ## Page 20
 
@@ -369,9 +340,7 @@ Verificação do funcionamento do circuito.
 
 <!-- Imagem: Waveform diagram showing input signals A, B, and C with values 0 at 0 ps, rising to 1 around 100 ns, and output signals D and E with values X (unknown) at 0 ps, rising to 1 around 300 ns. -->
 
-
 ---
-
 
 ## Page 21
 
@@ -443,4 +412,3 @@ Tabela-verdade:
     </tr>
   </tbody>
 </table>
-
