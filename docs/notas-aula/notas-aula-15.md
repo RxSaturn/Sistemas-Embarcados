@@ -1,39 +1,19 @@
-## Page 1
+# Notas de Aula 15 — Tipos de dados em VHDL (pacote padrão)
 
-<!-- Imagem: Logo with red circle and green squares -->
-INSTITUTO FEDERAL
-DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA
-Minas Gerais
-Campus Bambuí
-
-Disciplina: BiSuEEA.512 – Sistemas Embarcados
-2º semestre – 2025
-Notas de Aula 15
-
-Instrutor: Williams L. Nicomedes
-Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
-
-<!-- e-mail institucional removido -->
-
-11/12/2025
-
----
-
-## Page 2
+> **Disciplina:** BiSuEEA.512 – Sistemas Embarcados · 2º semestre de 2025  
+> **Instrutor:** Williams L. Nicomedes  
+> **Instituição:** IFMG Campus Bambuí – Departamento de Engenharia e Computação  
+> **Data:** 11/12/2025
 
 Projeto de circuitos combinacionais através da linguagem VHDL (Cont.)
 
----
+## Tipos de dados em VHDL (pacote padrão)
 
-## Page 3
-
-# Tipos de dados em VHDL (pacote padrão)
-
-## Dados escalares
+### Dados escalares
 
 `bit: '0' e '1'` (entre aspas simples);
 
-## Dados compostos (vetores)
+### Dados compostos (vetores)
 
 `bit_vector` (vetor de bits). Aspas duplas. Ex.:
 
@@ -53,11 +33,7 @@ MSB
 saida <= "0000";
 ```
 
----
-
-## Page 4
-
-# Operador de concatenação em VHDL
+## Operador de concatenação em VHDL
 
 Ex.: Seja porção de código VHDL:
 
@@ -76,78 +52,17 @@ O resultado desta operação é:
 
 `vet_C = 11000011`
 
----
+## 2. Tabela-verdade baseada na análise do problema SACI
 
-## Page 5
-
-# 2. Tabela-verdade baseada na análise do problema SACI
-
-<table>
-  <thead>
-    <tr>
-      <th>U₁</th>
-      <th>U₂</th>
-      <th>C</th>
-      <th>E</th>
-      <th>L<sub>A</sub></th>
-      <th>L<sub>V</sub></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>Umidade menor do que 40% e independe da chave: Válvula e LED azul ativados.</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>Umidade menor do que 40% e maior do que 80% (impossível). Saídas irrelevantes.</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>Umidade entre 40 e 80%, chave desligada: Saídas desativadas</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>Umidade entre 40 e 80%, chave ligada: Válvula e LED azul ativados</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>Umidade maior do que 80% e independe da chave: Só LED vermelho ativado.</td>
-    </tr>
-  </tbody>
-</table>
+| U₁ | U₂ | C | E | L<sub>A</sub> | L<sub>V</sub> | |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0 | 0 | 0 | 1 | 1 | 0 | Umidade menor do que 40% e independe da chave: Válvula e LED azul ativados. |
+| 0 | 1 | 0 | X | X | X | Umidade menor do que 40% e maior do que 80% (impossível). Saídas irrelevantes. |
+| 0 | 1 | 1 | X | X | X | Umidade entre 40 e 80%, chave desligada: Saídas desativadas |
+| 1 | 0 | 0 | 0 | 0 | 0 | Umidade entre 40 e 80%, chave ligada: Válvula e LED azul ativados |
+| 1 | 1 | 0 | 0 | 0 | 1 | Umidade maior do que 80% e independe da chave: Só LED vermelho ativado. |
 
 Obs.: L<sub>A</sub> = E, visto que o LED azul funciona como um sinalizador para a irrigação.
-
----
-
-## Page 6
 
 1. Obtenção das expressões lógicas (I/O)
 
@@ -169,11 +84,7 @@ Se tomarmos $X = 1$, teremos mais produtos canônicos, que poderiam ajudar na si
 
 Tomar então $X = 0$.
 
----
-
-## Page 7
-
-# Alternativa: Atribuição selecionada
+## Alternativa: Atribuição selecionada
 
 Construir circuitos utilizando expressões concorrentes com operadores lógicos:
 
@@ -185,19 +96,13 @@ Tarefa trabalhosa (inviável, para o caso de circuitos mais complexos).
 
 *(Sem se preocupar com operadores lógicos e expressões booleanas).*
 
----
-
-## Page 8
-
-# Alternativa: Atribuição selecionada
-
-## Atribuição selecionada:
+### Atribuição selecionada:
 
 Verificar em qual condição se encontra a expressão ou sinal para teste (no caso, os sinais de entrada);
 
 Realizar a atribuição (às saídas) correspondente à condição.
 
-## Sintaxe:
+### Sintaxe:
 
 ```vhdl
 with expressao_teste select

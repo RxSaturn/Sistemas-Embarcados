@@ -1,35 +1,15 @@
-## Page 1
+# Notas de Aula 14 — Classes de objetos em VHDL
 
-<!-- Imagem: Logo with red circle and green squares -->
-INSTITUTO FEDERAL
-DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA
-Minas Gerais
-Campus Bambuí
-
-Disciplina: BiSuEEA.512 – Sistemas Embarcados
-2º semestre – 2025
-Notas de Aula 14
-
-Instrutor: Williams L. Nicomedes
-Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
-
-<!-- e-mail institucional removido -->
-
-04/12/2025
-
----
-
-## Page 2
+> **Disciplina:** BiSuEEA.512 – Sistemas Embarcados · 2º semestre de 2025  
+> **Instrutor:** Williams L. Nicomedes  
+> **Instituição:** IFMG Campus Bambuí – Departamento de Engenharia e Computação  
+> **Data:** 04/12/2025
 
 Projeto de circuitos combinacionais através da linguagem VHDL
 
----
+## Classes de objetos em VHDL
 
-## Page 3
-
-# Classes de objetos em VHDL
-
-## Objetos: Elementos que armazenam valores.
+### Objetos: Elementos que armazenam valores.
 
 **Sinal (signal):** Usado para interconexão; fiação interna.
 Uso: Dentro da arquitetura (architecture);
@@ -40,13 +20,9 @@ Uso: Dentro de processos (process).
 **Constante (constant):**
 Uso: Diversos locais do código; inicializada com um valor específico e fixo.
 
----
+## Tipos de dados em VHDL
 
-## Page 4
-
-# Tipos de dados em VHDL
-
-## Tipos de dado (pacote padrão):
+### Tipos de dado (pacote padrão):
 
 * **bit:** `'0'` e `'1'` (entre aspas);
 * **boolean:** true e false (comparações, testes,...)
@@ -55,73 +31,32 @@ Uso: Diversos locais do código; inicializada com um valor específico e fixo.
 * **real:** Pontos decimais: 5.2, 10.1, ... (sem aspas);
 * **Tipo std_logic:** (pacote ieee.std_logic_1164);
 
-## Dados escalares x Dados compostos (vetores)...
+### Dados escalares x Dados compostos (vetores)...
 
----
+## Operadores lógicos em VHDL
 
-## Page 5
-
-# Operadores lógicos em VHDL
-
-<table>
-  <thead>
-    <tr>
-      <th>Operador</th>
-      <th>Significado</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>not</td>
-      <td>Negação</td>
-    </tr>
-    <tr>
-      <td>and</td>
-      <td>Conjunção</td>
-    </tr>
-    <tr>
-      <td>or</td>
-      <td>Disjunção</td>
-    </tr>
-    <tr>
-      <td>nand</td>
-      <td>Negação da conjunção</td>
-    </tr>
-    <tr>
-      <td>nor</td>
-      <td>Negação da disjunção</td>
-    </tr>
-    <tr>
-      <td>xor</td>
-      <td>Ou-exclusivo</td>
-    </tr>
-    <tr>
-      <td>xnor</td>
-      <td>Negação do ou-exclusivo</td>
-    </tr>
-  </tbody>
-</table>
+| Operador | Significado |
+| --- | --- |
+| not | Negação |
+| and | Conjunção |
+| or | Disjunção |
+| nand | Negação da conjunção |
+| nor | Negação da disjunção |
+| xor | Ou-exclusivo |
+| xnor | Negação do ou-exclusivo |
 
 Operador **not**: Maior ordem de precedência (prioridade);
 Demais operadores lógicos: Mesma ordem de prioridade.
 Parênteses (evitar ambiguidade).
 *Operadores relacionais e aritméticos (...)*
 
----
-
-## Page 6
-
-# Circuitos combinacionais
+## Circuitos combinacionais
 
 (Def.) Níveis lógicos das saídas dependentes única e exclusivamente da relação lógica entre as entradas.
 
 <!-- Imagem: A diagram showing a "Circuito digital combinacional" (Digital combinational circuit). On the left side, there are three vertical labels: "Entradas" (Inputs) with arrows pointing to E₀, E₁, and Eₙ. On the right side, there are three vertical labels: "Saídas" (Outputs) with arrows pointing to S₀, S₁, and Sₘ. -->
 
----
-
-## Page 7
-
-# Projeto de circuitos combinacionais em VHDL
+## Projeto de circuitos combinacionais em VHDL
 
 A partir do problema dado, percorrer as etapas:
 
@@ -131,12 +66,6 @@ A partir do problema dado, percorrer as etapas:
 Simplificação das expressões via álgebra booleana e mapas de Karnaugh;
 4. Descrição em código VHDL;
 5. Implementação em FPGA (síntese).
-
----
-
-## Page 8
-
-# Projeto de circuitos combinacionais em VHDL
 
 SE:
 
@@ -148,11 +77,7 @@ Exemplo prático: Sistema Automático de Controle de Irrigação (SACI)
 
 <!-- Imagem: ∞ symbol -->
 
----
-
-## Page 9
-
-# Exemplo prático: SACI
+## Exemplo prático: SACI
 
 ```mermaid
 graph TD
@@ -167,13 +92,7 @@ graph TD
 
 Circuito lógico: A ser implementado em um chip FPGA.
 
----
-
-## Page 10
-
-# Exemplo prático: SACI
-
-## Sensor de umidade do solo:
+### Sensor de umidade do solo:
 
 Permite o **ajuste do nível N** de umidade a ser detectado.
 
@@ -183,11 +102,7 @@ Umidade maior do que *N*: Nível lógico 1.
 <!-- Imagem: A soil moisture sensor with a yellow/orange cable connected to an Arduino Uno board. -->
 <!-- Imagem: A breadboard circuit showing an Arduino Uno board connected to a soil moisture sensor via wires (yellow, red, black). -->
 
----
-
-## Page 11
-
-# Exemplo prático: SACI
+## Exemplo prático: SACI
 
 **Chave (push button):**
 
@@ -196,21 +111,9 @@ Botão não-pressionado: Nível lógico 0.
 
 <!-- Imagem: A breadboard with an Arduino Uno board, a push button, a resistor, and a LED connected by wires. -->
 
----
-
-## Page 12
-
-# Exemplo prático: SACI
-
 **Eletroválvula:** Dispositivo que controla uma válvula hidráulica que bloqueia a passagem de água quando sua bobina está desenergizada e permite a sua passagem quando está energizada.
 
 <!-- Imagem: An electric valve with a transparent body showing internal components, including a solenoid coil. The valve has labels "Model: 4V410-15", "Pressure: 0.15~0.8MPa", "VALVE", "CE", and "EVI 24V DC 4.8W 200mA 100% ED IP 65 CE". It also shows ports labeled A, B, R, P, S, and a diagram indicating flow directions. -->
-
----
-
-## Page 13
-
-# Exemplo prático: SACI
 
 O Sistema Automático de Irrigação consiste em dois sensores de umidade $U_1$ e $U_2$, que detectam se a umidade do solo está abaixo de 40%, entre 40% e 80%, ou acima de 80%.
 
@@ -224,13 +127,9 @@ Um LED azul indicará quando o irrigador estiver em operação;
 
 Um LED vermelho indicará umidade acima de 80%.
 
----
+## 1. Identificação e definição das variáveis de entrada e saída
 
-## Page 14
-
-# 1. Identificação e definição das variáveis de entrada e saída
-
-## Entradas
+### Entradas
 
 **Sensor U₁**
 
@@ -247,13 +146,9 @@ Um LED vermelho indicará umidade acima de 80%.
 * Chave desligada: C = 0
 * Chave ligada: C = 1
 
----
+## 1. Identificação e definição das variáveis de entrada e saída
 
-## Page 15
-
-# 1. Identificação e definição das variáveis de entrada e saída
-
-## Saídas
+### Saídas
 
 **Eletroválvula E**
 
@@ -270,11 +165,7 @@ Um LED vermelho indicará umidade acima de 80%.
 * $L_V = 0$: LED apagado (umidade baixa)
 * $L_V = 1$: LED aceso (umidade alta)
 
----
-
-## Page 16
-
-# 2. Tabela-verdade baseada na análise do problema
+## 2. Tabela-verdade baseada na análise do problema
 
 Atenção: Nem todas as combinações lógicas presentes na entrada são possíveis de ocorrer, por razões puramente físicas.
 
@@ -284,78 +175,15 @@ O conjunto de entradas U₁ = 0 e U₂ = 1 portanto não ocorre; as saídas corr
 
 <!-- Imagem: A diagram showing a "Circuito Lógico Combinacional" with three inputs labeled U1, U2, and C, and three outputs labeled E, LA, and LV. -->
 
----
-
-## Page 17
-
-# 2. Tabela-verdade baseada na análise do problema
-
-<table>
-  <thead>
-    <tr>
-      <th>U₁</th>
-      <th>U₂</th>
-      <th>C</th>
-      <th>E</th>
-      <th>L<sub>A</sub></th>
-      <th>L<sub>V</sub></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>Umidade menor do que 40% e independe da chave: Válvula e LED azul ativados.</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>Umidade menor do que 40% e maior do que 80% (impossível). Saídas irrelevantes.</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-      <td>Umidade entre 40 e 80%, chave desligada: Saídas desativadas</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>Umidade entre 40 e 80%, chave ligada: Válvula e LED azul ativados</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>Umidade maior do que 80% e independe da chave: Só LED vermelho ativado.</td>
-    </tr>
-  </tbody>
-</table>
+| U₁ | U₂ | C | E | L<sub>A</sub> | L<sub>V</sub> | |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0 | 0 | 0 | 1 | 1 | 0 | Umidade menor do que 40% e independe da chave: Válvula e LED azul ativados. |
+| 0 | 1 | 0 | X | X | X | Umidade menor do que 40% e maior do que 80% (impossível). Saídas irrelevantes. |
+| 0 | 1 | 1 | X | X | X | Umidade entre 40 e 80%, chave desligada: Saídas desativadas |
+| 1 | 0 | 0 | 0 | 0 | 0 | Umidade entre 40 e 80%, chave ligada: Válvula e LED azul ativados |
+| 1 | 1 | 0 | 0 | 0 | 1 | Umidade maior do que 80% e independe da chave: Só LED vermelho ativado. |
 
 Obs.: L<sub>A</sub> = E, visto que o LED azul funciona como um sinalizador para a irrigação.
-
----
-
-## Page 18
 
 1. Obtenção das expressões lógicas (I/O)
 
@@ -376,10 +204,6 @@ Se tomarmos $X = 1$, teremos mais produtos canônicos, que poderiam ajudar na si
 **Propósito:** Economizar portas lógicas (Cl's padrão).
 
 Tomar então $X = 0$.
-
----
-
-## Page 19
 
 1. Descrição em código VHDL
 

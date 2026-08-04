@@ -1,33 +1,13 @@
-## Page 1
+# Notas de Aula 10 — Introdução
 
-<!-- Imagem: Logo with red circle and green squares -->
-INSTITUTO FEDERAL
-DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA
-Minas Gerais
-Campus Bambuí
-
-Disciplina: BiSuEEA.512 – Sistemas Embarcados
-2º semestre – 2025
-Notas de Aula 10
-
-Instrutor: Williams L. Nicomedes
-Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
-
-<!-- e-mail institucional removido -->
-
-06/11/2025
-
----
-
-## Page 2
+> **Disciplina:** BiSuEEA.512 – Sistemas Embarcados · 2º semestre de 2025  
+> **Instrutor:** Williams L. Nicomedes  
+> **Instituição:** IFMG Campus Bambuí – Departamento de Engenharia e Computação  
+> **Data:** 06/11/2025
 
 A linguagem VHDL
 
----
-
-## Page 3
-
-# Introdução
+## Introdução
 
 Década de 1980:
 
@@ -43,12 +23,6 @@ Dezenas de HDL's surgiram:
 
 Fabricantes de PLD's/FPGA's desenvolvem suas próprias linguagens.
 
----
-
-## Page 4
-
-# Introdução
-
 HDL's mais empregada: Verilog e VHDL
 
 VHDL: Very High Speed Integrated Circuit Hardware Description Language
@@ -63,11 +37,7 @@ Uso: Ferramentas EDA (Electronic Design Automation)
 
 Softwares (disponibilizados pelos fabricantes) para descrever o hardware e “traduzir” o que foi descrito pelo projetista via HDL para um circuito físico.
 
----
-
-## Page 5
-
-# PLD's vs. Microcontroladores
+## PLD's vs. Microcontroladores
 
 HDL's não dão origem a um programa (execução de uma sequência de instruções).
 
@@ -83,12 +53,6 @@ Não se executa instrução, mas sim constrói-se a porta lógica, que é um cir
 
 Ferramenta EDA “desenha” uma porta lógica AND no chip FPGA (determinação de z: sinais).
 
----
-
-## Page 6
-
-# PLD's vs. Microcontroladores
-
 Tempo de resposta (sinais de saída em resposta a estímulos de entrada) corresponde a:
 
 **Microcontroladores:**
@@ -100,12 +64,6 @@ Tempo de execução do programa no processador;
 Tempo de propagação do sinal (elétrico) pelo caminho físico percorrido no chip (trilhas).
 
 O circuito foi construído no chip; a partir daí, não há sentido em falar de “execução” de instruções.
-
----
-
-## Page 7
-
-# PLD's vs. Microcontroladores
 
 *Exemplo 2. Circuito digital (2 entradas e 2 saídas).*
 
@@ -125,12 +83,6 @@ saida1 = a & b;
 Figura 3.1 — Circuito composto por duas portas lógicas: AND e OR.
 -->
 
----
-
-## Page 8
-
-# PLD's vs. Microcontroladores
-
 *Exemplo 2.* Circuito digital (2 entradas e 2 saídas).
 
 **Microcontrolador/Linguagem C:**
@@ -149,12 +101,6 @@ Inverter a ordem: Obtemos o mesmo resultado
 
 <!-- Imagem: ∞ symbol -->
 
----
-
-## Page 9
-
-# PLD's vs. Microcontroladores
-
 Caso particular: Entradas A = 1 e B = 1:
 
 Diferença nos tempos de resposta
@@ -166,12 +112,6 @@ Diagrama de tempo – Microcontrolador (Linguagem C)
 <!-- Imagem: Diagram showing timing for Microcontroller with labels A, B, saida2, saida1. -->
 
 Figura 3.2 – Diagramas de tempo diferentes em FPGA e microcontrolador.
-
----
-
-## Page 10
-
-# PLD's vs. Microcontroladores
 
 Caso particular: Entradas A = 1 e B = 1:
 
@@ -185,11 +125,7 @@ FPGA/VHDL:
 Leva em conta o tempo de propagação do sinal;
 As duas saídas comutam simultaneamente.
 
----
-
-## Page 11
-
-# Fluxo de projeto
+## Fluxo de projeto
 
 ```mermaid
 graph LR
@@ -208,21 +144,7 @@ graph LR
 
 3. **Circuito/descrição RTL (register transfer level)**: Circuito digital "genérico", i.e., não leva a tecnologia em conta (ferramenta EDA). Obtido do entendimento da ferramenta em relação ao código do projetista.
 
----
-
-## Page 12
-
-# Fluxo de projeto
-
-```mermaid
-graph LR
-    A[Especificações] --> B[HDL]
-    B --> C[RTL]
-    C --> D[Síntese]
-    D --> E[Fabricação]
-```
-
-1. **Síntese**: A partir da descrição/circuito RTL, a ferramenta gera um arquivo *netlist* (nível de portas lógicas – *gate level* – nível baixo de abstração), levando-se em conta a tecnologia disponível em (1).
+4. **Síntese**: A partir da descrição/circuito RTL, a ferramenta gera um arquivo *netlist* (nível de portas lógicas – *gate level* – nível baixo de abstração), levando-se em conta a tecnologia disponível em (1).
 
 Do arquivo *netlist* sairão as informações de posicionamento e roteamento (*place and route*) que serão utilizadas para as interligações implementadas no FPGA.
 
@@ -230,11 +152,7 @@ Do arquivo *netlist* sairão as informações de posicionamento e roteamento (*p
 
 1. **Fabricação**: Implementação física (ligações no chip).
 
----
-
-## Page 13
-
-# Linguagem VHDL – Características Gerais
+## Linguagem VHDL – Características Gerais
 
 **Padronização IEEE:** Aceita por todas as tecnologias e fabricantes de PLD's;
 
@@ -254,12 +172,6 @@ Circuito 4
 Figura 3.3 – Modelamento estrutural.
 -->
 
----
-
-## Page 14
-
-# Linguagem VHDL – Características Gerais
-
 Não diferencia letras maiúsculas e minúsculas (i.e., não é case sensitive);
 
 Sentenças devem ser terminadas por “ ; ” (ponto-e-vírgula);
@@ -272,11 +184,7 @@ Comentários:
 
 “ /*” e “* / ”: Comentário em múltiplas linhas.
 
----
-
-## Page 15
-
-# Estrutura básica dos códigos VHDL
+## Estrutura básica dos códigos VHDL
 
 Dividida em três unidades principais de projeto (design units):
 
@@ -286,12 +194,6 @@ Ordem em que aparecem no código:
 
 <!-- Imagem: A diagram showing three stacked rectangles. The top rectangle contains the text "BIBLIOTECAS / PACOTES". The middle rectangle contains the text "ENTIDADE". The bottom rectangle contains the text "ARQUITETURA". -->
 
----
-
-## Page 16
-
-# Estrutura básica dos códigos VHDL
-
 **Biblioteca/pacotes:** “Cabeçalho” do código. Fornecem informações sobre o que será utilizado ao longo do código, como tipos de dados, funções e componentes.
 
 **Entidade:** Forma como o mundo enxerga o componente (ou circuito). Pinos (entradas e saídas).
@@ -299,12 +201,6 @@ Ordem em que aparecem no código:
 **Arquitetura:** Funcionalidade do circuito, i.e., sua lógica interna. “O que acontece dentro do circuito?”
 
 <!-- Imagem: A diagram showing a chip with "Entidade" (Entity) at the top left, an arrow pointing to the chip, and "Arquitetura" (Architecture) at the bottom right, with an arrow pointing from the chip to the architecture. -->
-
----
-
-## Page 17
-
-# Estrutura básica dos códigos VHDL
 
 ```vhdl
 library nome_biblioteca;
@@ -321,11 +217,7 @@ begin
 end nome_arquitetura;
 ```
 
----
-
-## Page 18
-
-# Bibliotecas e pacotes
+## Bibliotecas e pacotes
 
 **Biblioteca:** Diretório contendo informações que serão utilizadas na descrição do circuito. **Conjunto de pacotes (de informação);**
 
@@ -337,38 +229,11 @@ end nome_arquitetura;
 
 **Biblioteca mais comum:** ieee
 
----
-
-## Page 19
-
-# Bibliotecas e pacotes
-
-<table>
-  <thead>
-    <tr>
-      <th>Biblioteca</th>
-      <th>Pacote</th>
-      <th>Resumo</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>ieee</td>
-      <td>std_logic</td>
-      <td>Define o tipo de dado std_logic;</td>
-    </tr>
-    <tr>
-      <td>ieee</td>
-      <td>numeric_std</td>
-      <td>Operações aritméticas com std_logic_vector;</td>
-    </tr>
-    <tr>
-      <td>ieee</td>
-      <td>numeric_bit</td>
-      <td>Operações aritméticas com bit_vector.</td>
-    </tr>
-  </tbody>
-</table>
+| Biblioteca | Pacote | Resumo |
+| --- | --- | --- |
+| ieee | std_logic | Define o tipo de dado std_logic; |
+| ieee | numeric_std | Operações aritméticas com std_logic_vector; |
+| ieee | numeric_bit | Operações aritméticas com bit_vector. |
 
 Usar *todos* os objetos do pacote numeric_std (p. ex.):
 
@@ -377,11 +242,7 @@ library ieee;
 use ieee.numeric_std.all;
 ```
 
----
-
-## Page 20
-
-# Entidade
+## Entidade
 
 Declaração de portas: Entradas e saídas do circuito.
 
@@ -398,53 +259,18 @@ end exemplo;
 
 Entradas/saídas do mesmo tipo p1 e p2: Podem ser declaradas juntas (separadas por vírgula);
 
----
-
-## Page 21
-
-# Entidade
-
-## Sintaxe portas:
+### Sintaxe portas:
 
 nome_porta : modo tipo;
 
-<table>
-  <thead>
-    <tr>
-      <th>Modo</th>
-      <th>Significado</th>
-      <th>Observação</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>in</td>
-      <td>Entrada</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>out</td>
-      <td>Saída</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>inout</td>
-      <td>Bidirecional</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>buffer</td>
-      <td>Saída</td>
-      <td>Permite realimentação</td>
-    </tr>
-  </tbody>
-</table>
+| Modo | Significado | Observação |
+| --- | --- | --- |
+| in | Entrada | - |
+| out | Saída | - |
+| inout | Bidirecional | - |
+| buffer | Saída | Permite realimentação |
 
----
-
-## Page 22
-
-# Arquitetura
+## Arquitetura
 
 Representa a lógica dentro da entidade:
 
@@ -455,12 +281,6 @@ A arquitetura possui um nome, e é associada a uma entidade (declarada anteriorm
 Sintaxe:
 
 architecture nome_arquitetura of nome_entidade is
-
----
-
-## Page 23
-
-# Arquitetura
 
 ```vhdl
 entity exemplo is
@@ -479,11 +299,7 @@ end arq;
 
 Operador de atribuição: "<="
 
----
-
-## Page 24
-
-# Identificadores
+## Identificadores
 
 Nomes dados a sinais, variáveis, portas, processos, etc.
 
@@ -494,20 +310,14 @@ Regras:
 * Não podem terminar com *underline* ou conter dois *underlines* em sequência ("_")
 * Não utilizar os mesmos nomes de palavras reservadas.
 
----
-
-## Page 25
-
-# Identificadores
-
-## Exemplos válidos:
+### Exemplos válidos:
 
 Somador1
 Porta_3
 RESULTADO_FINAL
 X3
 
-## Exemplos inválidos:
+### Exemplos inválidos:
 
 result_final
 bus_

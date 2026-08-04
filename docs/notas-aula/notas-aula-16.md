@@ -1,29 +1,9 @@
-## Page 1
+# Notas de Aula 16 — Processos
 
-<!-- Imagem: Logo of Instituto Federal de Educação, Ciência e Tecnologia Minas Gerais Campus Bambuí -->
-
-**INSTITUTO FEDERAL**
-**DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA**
-Minas Gerais
-Campus Bambuí
-
-**Disciplina:** BiSuEEA.512 – Sistemas Embarcados
-
-2º semestre – 2025
-
-Notas de Aula 16
-
-**Instrutor:** Williams L. Nicomedes
-
-Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
-
-<!-- e-mail institucional removido -->
-
-18/12/2025
-
----
-
-## Page 2
+> **Disciplina:** BiSuEEA.512 – Sistemas Embarcados · 2º semestre de 2025  
+> **Instrutor:** Williams L. Nicomedes  
+> **Instituição:** IFMG Campus Bambuí – Departamento de Engenharia e Computação  
+> **Data:** 18/12/2025
 
 Projeto de circuitos combinacionais através da linguagem VHDL:
 
@@ -31,11 +11,7 @@ Projeto de circuitos combinacionais através da linguagem VHDL:
 
 [2]. Decodificadores.
 
----
-
-## Page 3
-
-# Processos
+## Processos
 
 **Processos:** Regiões de códigos **sequenciais**:
 
@@ -43,12 +19,6 @@ Projeto de circuitos combinacionais através da linguagem VHDL:
 * Respeitando a **ordem** na qual estão localizados no código.
 
 **VHDL:** Comandos concorrentes.
-
----
-
-## Page 4
-
-# Processos
 
 ```vhdl
 library ieee;
@@ -65,12 +35,6 @@ end func;
 ```
 
 Erro: Na região ‘concorrente’ do código (fora de um processo), a descrição envia dois sinais diferentes para a mesma saída s.
-
----
-
-## Page 5
-
-# Processos
 
 ```vhdl
 library ieee;
@@ -96,11 +60,7 @@ end func;
 
 Executa os comandos sequenciais mas **não atualiza o valor de s enquanto o processo está em andamento**. Resultado: s = a and b.
 
----
-
-## Page 6
-
-# Estruturas de controle: case-when
+## Estruturas de controle: case-when
 
 ```vhdl
 case expressao_em_analise is
@@ -114,11 +74,7 @@ Comandos sequenciais **dentro de processos**.
 
 (não usar atribuição selecionada with...select)
 
----
-
-## Page 7
-
-# Estruturas de controle: *if-then*
+## Estruturas de controle: *if-then*
 
 ```pascal
 if cond_1 then
@@ -134,11 +90,7 @@ Estrutura *if-then-else*: **Dentro de processos.**
 
 (Se trata de construção sequencial.)
 
----
-
-## Page 8
-
-# Decodificadores
+## Decodificadores
 
 Há mais de uma forma de representar uma mesma informação: Conversão entre uma forma e outra.
 
@@ -170,12 +122,6 @@ graph LR
 
 <!-- Imagem: ∞ symbol -->
 
----
-
-## Page 9
-
-# Decodificadores
-
 *Decodificadores*: Circuitos que recebem um código binário e acionam a saída correspondente.
 
 Para cada combinação na entrada, uma única saída é acionada, mantendo todas as outras desativadas.
@@ -184,151 +130,32 @@ Para N bits de entrada, há 2^N combinações possíveis, e portanto M = 2^N sa�
 
 <!-- Imagem: A diagram showing a "Decodificador" (Decoder) with N input lines labeled E0, E1, E2, ..., EN-1 on the left, and M output lines labeled S0, S1, S2, ..., SM-1 on the right. -->
 
----
-
-## Page 10
-
-# Decodificadores
-
 *Exemplo:* Decodificador binário para decimal (decodificador 2 para 4) simples:
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="2">Entradas</th>
-      <th colspan="4">Saídas</th>
-    </tr>
-    <tr>
-      <th>E1</th>
-      <th>E0</th>
-      <th>S3</th>
-      <th>S2</th>
-      <th>S1</th>
-      <th>S0</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td></td>
-      <td></td>
-      <td>1</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td></td>
-      <td>1</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+| E1 | E0 | S3 | S2 | S1 | S0 |
+| --- | --- | --- | --- | --- | --- |
+| 0 | 0 | | | | 1 |
+| 0 | 1 | | | 1 | |
+| 1 | 0 | | 1 | | |
+| 1 | 1 | 1 | | | |
 
 *Obs.:* Os valores não indicados nas saída correspondem a um bit **0**.
 
----
-
-## Page 11
-
-# Decodificadores
-
 *Exemplo:* Decodificador binário para decimal (decodificador 2 para 4) com ENABLE (habilitar):
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3">Entradas</th>
-      <th colspan="4">Saídas</th>
-    </tr>
-    <tr>
-      <th>ENABLE</th>
-      <th>E1</th>
-      <th>E0</th>
-      <th>S3</th>
-      <th>S2</th>
-      <th>S1</th>
-      <th>S0</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>X</td>
-      <td>X</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-      <td></td>
-      <td></td>
-      <td>1</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td></td>
-      <td>1</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+| ENABLE | E1 | E0 | S3 | S2 | S1 | S0 |
+| --- | --- | --- | --- | --- | --- | --- |
+| 0 | X | X | | | | |
+| 1 | 0 | 0 | | | | 1 |
+| 1 | 0 | 1 | | | 1 | |
+| 1 | 1 | 0 | | 1 | | |
+| 1 | 1 | 1 | 1 | | | |
 
 *Obs.:* Valores não indicados nas saída correspondem a **0**.
 
 *Obs.:* Quando o sinal de controle **ENABLE = 0**, o decodificador **não funciona** (i.e., não seleciona nenhuma saída), mantendo todas as saídas em **0**, independentemente das entradas.
 
----
-
-## Page 12
-
-# Decodificadores
-
-## Cuidados – Implementação Quartus
+### Cuidados – Implementação Quartus
 
 No arquivo esquemático:
 
@@ -338,11 +165,7 @@ No arquivo esquemático:
 
 `nome_sinal[3..0]`
 
----
-
-## Page 13
-
-# Decodificadores
+## Decodificadores
 
 Implementação via portas lógicas...
 
