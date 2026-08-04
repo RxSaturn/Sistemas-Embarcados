@@ -1,6 +1,6 @@
 ## Page 1
 
-&lt;img&gt;Logo with red circle and green squares&lt;/img&gt;
+<!-- Imagem: Logo with red circle and green squares -->
 INSTITUTO FEDERAL
 DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA
 Minas Gerais
@@ -30,7 +30,6 @@ Projeto de circuitos sequenciais através da linguagem VHDL:
 
 [3]. Encapsulamento.
 
-&lt;page_number&gt;2&lt;/page_number&gt;
 
 ---
 
@@ -96,9 +95,8 @@ Flip-flop tipo JK – Tabela de transição. Estado atual: Q(n).
   </tbody>
 </table>
 
-&lt;img&gt;A circuit diagram showing a clock signal (CLK) connected to a flip-flop. The flip-flop has two inputs labeled J and K, and two outputs labeled Q and $\overline{Q}$. The J input is connected to one side of the clock, and the K input is connected to the other side.&lt;/img&gt;
+<!-- Imagem: A circuit diagram showing a clock signal (CLK) connected to a flip-flop. The flip-flop has two inputs labeled J and K, and two outputs labeled Q and $\overline{Q}$. The J input is connected to one side of the clock, and the K input is connected to the other side. -->
 
-&lt;page_number&gt;4&lt;/page_number&gt;
 
 ---
 
@@ -107,7 +105,7 @@ Flip-flop tipo JK – Tabela de transição. Estado atual: Q(n).
 
 # FF tipo JK: Elemento de memória
 
-&lt;img&gt;A circuit diagram showing a JK flip-flop with inputs J, K, and CLK, and outputs Q and Q̄.&lt;/img&gt;
+<!-- Imagem: A circuit diagram showing a JK flip-flop with inputs J, K, and CLK, and outputs Q and Q̄. -->
 
 <table>
   <thead>
@@ -141,9 +139,8 @@ Flip-flop tipo JK – Tabela de transição. Estado atual: Q(n).
   </tbody>
 </table>
 
-&lt;img&gt;A timing diagram illustrating the behavior of a JK flip-flop over time. The diagram shows four columns labeled J, K, CLK, and Q, each with multiple horizontal lines representing different states (0 or 1) at various points in time. The Q column is highlighted in pink to show its state changes. A horizontal arrow labeled "Tempo" indicates the passage of time from left to right.&lt;/img&gt;
+<!-- Imagem: A timing diagram illustrating the behavior of a JK flip-flop over time. The diagram shows four columns labeled J, K, CLK, and Q, each with multiple horizontal lines representing different states (0 or 1) at various points in time. The Q column is highlighted in pink to show its state changes. A horizontal arrow labeled "Tempo" indicates the passage of time from left to right. -->
 
-&lt;page_number&gt;5&lt;/page_number&gt;
 
 ---
 
@@ -182,7 +179,6 @@ begin
             if J = '1' and K = '1' then Qstate <= NOT(Qstate);
             elsif J = '1' and K = '0' then Qstate <= '1';
 ```
-&lt;page_number&gt;6&lt;/page_number&gt;
 
 ---
 
@@ -212,7 +208,6 @@ Ex.: Salvar como Codigo_01.vhd
 47
 ```
 
-&lt;page_number&gt;7&lt;/page_number&gt;
 
 ---
 
@@ -244,9 +239,8 @@ Variável auxiliar Qstate.
 *   Set as Top-Level Entity;
 *   Compilação.
 
-&lt;img&gt;A schematic diagram showing inputs J, K, and CLOCK connected to a block labeled "BlocoFF_JK". Inside this block, there's an instance of a component with pins J, K, clk, and Q. The output pin Q is connected to another block.&lt;/img&gt;
+<!-- Imagem: A schematic diagram showing inputs J, K, and CLOCK connected to a block labeled "BlocoFF_JK". Inside this block, there's an instance of a component with pins J, K, clk, and Q. The output pin Q is connected to another block. -->
 
-&lt;page_number&gt;9&lt;/page_number&gt;
 
 ---
 
@@ -263,9 +257,8 @@ Verificação do funcionamento do circuito.
 
 Salvar como Waveform_01.vwf.
 
-&lt;img&gt;Waveform diagram showing CLOCK, J, K, and Q signals with values B0 and B1 over time.&lt;/img&gt;
+<!-- Imagem: Waveform diagram showing CLOCK, J, K, and Q signals with values B0 and B1 over time. -->
 
-&lt;page_number&gt;10&lt;/page_number&gt;
 
 ---
 
@@ -274,9 +267,11 @@ Salvar como Waveform_01.vwf.
 
 Contador MOD 8 / Divisor de frequências
 
-&lt;img&gt;Circuit diagram showing three JK flip-flops (FF0, FF1, FF2) connected in series with clock inputs (CLK) and power supply (Vcc). Each flip-flop has J and K inputs, and outputs QOUT0, QOUT1, and QOUT2 respectively.&lt;/img&gt;
+<!-- Imagem: Circuit diagram showing three JK flip-flops (FF0, FF1, FF2) connected in series with clock inputs (CLK) and power supply (Vcc). Each flip-flop has J and K inputs, and outputs QOUT0, QOUT1, and QOUT2 respectively. -->
 
-&lt;img&gt;Timing diagram illustrating the operation of the counter. It shows:
+<!--
+Imagem:
+Timing diagram illustrating the operation of the counter. It shows:
 - A horizontal line labeled "Clock pulses" with a series of pink rectangular pulses.
 - A vertical line labeled "T_CLK" indicating the duration of each clock pulse.
 - Three vertical lines labeled "Q0", "Q1", and "Q2" displaying the state of the flip-flops over time.
@@ -284,8 +279,8 @@ Contador MOD 8 / Divisor de frequências
 - A horizontal line labeled "T_Q1" indicating the duration of the first flip-flop's output change.
 - A horizontal line labeled "T_Q2" indicating the duration of the second flip-flop's output change.
 - A horizontal line labeled "T_Q3" indicating the duration of the third flip-flop's output change.
-- A horizontal line labeled "Count Q2Q1Q0>" at the bottom, showing the binary state of the flip-flops over time, starting with 000 and progressing through 001, 010, 011, 100, 101, 110, 111, 000, 001, 010, 100, etc.&lt;/img&gt;
-&lt;page_number&gt;11&lt;/page_number&gt;
+- A horizontal line labeled "Count Q2Q1Q0>" at the bottom, showing the binary state of the flip-flops over time, starting with 000 and progressing through 001, 010, 011, 100, 101, 110, 111, 000, 001, 010, 100, etc.
+-->
 
 ---
 
@@ -298,9 +293,8 @@ Idea: Interconectar três blocos lógicos correspondentes ao FF tipo JK (BlocoFF
 
 Três instâncias (inst, inst1, inst2).
 
-&lt;img&gt;VHDL Circuit Diagram showing three instances of BlocoFF_JK connected to form a counter.&lt;/img&gt;
+<!-- Imagem: VHDL Circuit Diagram showing three instances of BlocoFF_JK connected to form a counter. -->
 
-&lt;page_number&gt;12&lt;/page_number&gt;
 
 ---
 
@@ -315,9 +309,8 @@ Interconexão dos três blocos (pg. 12): **Novo arquivo esquemático** (Esquemat
 
 Especificar Esquematico_02.bdf como a entidade de máximo nível: Painel *Project Navigator* (lado esquerdo da tela), clicar com o botão direito sobre o nome do arquivo e escolher *Set as Top-Level Entity*, antes de proceder à compilação.
 
-&lt;img&gt;Screenshot of Project Navigator window with files listed on the left. The file "Esquematico_2.bdf" is highlighted, and a context menu is open showing options like "Open", "Remove File from Project", "Set as Top-Level Entity Ctrl+Shift+J", and "Properties...".&lt;/img&gt;
+<!-- Imagem: Screenshot of Project Navigator window with files listed on the left. The file "Esquematico_2.bdf" is highlighted, and a context menu is open showing options like "Open", "Remove File from Project", "Set as Top-Level Entity Ctrl+Shift+J", and "Properties...". -->
 
-&lt;page_number&gt;13&lt;/page_number&gt;
 
 ---
 
@@ -359,11 +352,10 @@ Entrada VCC = 1. (Salvar como Waveform_02.vwf)
 </tbody>
 </table>
 
-&lt;img&gt;Waveform diagram showing Vcc, CLOCK, Q0, Q1, and Q2 signals over time.&lt;/img&gt;
+<!-- Imagem: Waveform diagram showing Vcc, CLOCK, Q0, Q1, and Q2 signals over time. -->
 
-&lt;img&gt;Timing diagram illustrating clock pulses, Q0, Q1, Q2, and count states.&lt;/img&gt;
+<!-- Imagem: Timing diagram illustrating clock pulses, Q0, Q1, Q2, and count states. -->
 
-&lt;page_number&gt;14&lt;/page_number&gt;
 
 ---
 
@@ -385,7 +377,6 @@ Escolher o esquemático (1 ou 2);
 
 *   (Não precisa compilar de novo).
 
-&lt;page_number&gt;15&lt;/page_number&gt;
 
 ---
 
@@ -406,7 +397,6 @@ Entrada única (*clock*);
 
 Saída única (contador).
 
-&lt;page_number&gt;16&lt;/page_number&gt;
 
 ---
 
@@ -438,7 +428,6 @@ Saída única (Q_out) – tipo std_logic_vector
 
 2 downto 0: Q₂Q₁Q₀
 
-&lt;page_number&gt;17&lt;/page_number&gt;
 
 ---
 
@@ -471,7 +460,6 @@ begin
 
 end Funcionamento2;
 ```
-&lt;page_number&gt;18&lt;/page_number&gt;
 
 ---
 
@@ -492,7 +480,6 @@ end Funcionamento2;
 
 *   Project > Add Current File to Project
 
-&lt;page_number&gt;19&lt;/page_number&gt;
 
 ---
 
@@ -503,7 +490,7 @@ end Funcionamento2;
 
 FF0, FF1, FF2: Criação/instanciação de três blocos lógicos (relativos ao FF tipo JK), cada um deles com entradas J, K, clk e saída Q).
 
-&lt;img&gt;Circuit diagram showing three JK flip-flops (FF0, FF1, FF2) connected in series. Each flip-flop has power supply Vcc, clock input CLK, J and K inputs, and output Q. The outputs QOUT0, QOUT1, and QOUT2 are shown.&lt;/img&gt;
+<!-- Imagem: Circuit diagram showing three JK flip-flops (FF0, FF1, FF2) connected in series. Each flip-flop has power supply Vcc, clock input CLK, J and K inputs, and output Q. The outputs QOUT0, QOUT1, and QOUT2 are shown. -->
 
 “Montar” o circuito acima através do comando port map.
 Mapeamento: Símbolo ‘=>’.
@@ -514,7 +501,6 @@ Fazer clk => Q_out(0) [???]
 
 Erro. Teríamos saída (Q_out, pg.17) atribuída à entrada (clk).
 
-&lt;page_number&gt;20&lt;/page_number&gt;
 
 ---
 
@@ -539,7 +525,6 @@ Com o arquivo Codigo_02.vhd ao fundo:
 *   Create/Update;
 *   Create Symbol Files for Current File.
 
-&lt;page_number&gt;21&lt;/page_number&gt;
 
 ---
 
@@ -550,7 +535,7 @@ Com o arquivo Codigo_02.vhd ao fundo:
 
 ## Criação do bloco:
 
-&lt;img&gt;Screenshot showing a software interface with a menu on the left and a code editor window on the right. The menu includes options like File, Edit, View, Project, Assignments, Processing, Tools, Window, Help, New..., Open..., Close, New Project Wizard..., Open Project..., Save Project, Close Project, Save, Save As..., Save All, File Properties..., Create / Update, Export..., Convert Programming Files..., Page Setup..., Print Preview, Print..., Recent Files, and various tool icons.&lt;/img&gt;
+<!-- Imagem: Screenshot showing a software interface with a menu on the left and a code editor window on the right. The menu includes options like File, Edit, View, Project, Assignments, Processing, Tools, Window, Help, New..., Open..., Close, New Project Wizard..., Open Project..., Save Project, Close Project, Save, Save As..., Save All, File Properties..., Create / Update, Export..., Convert Programming Files..., Page Setup..., Print Preview, Print..., Recent Files, and various tool icons. -->
 
 ```vhdl
 --Logica do bloco
@@ -563,7 +548,6 @@ component BlocoFF_JK
 end component;
 ```
 
-&lt;page_number&gt;22&lt;/page_number&gt;
 
 ---
 
@@ -574,7 +558,7 @@ end component;
 
 Novo arquivo esquemático: Esquematico_03.bdf
 
-&lt;img&gt;Diagram showing a "BlocoContador" block with inputs "CLOCK", "VCC", "clk_in", and outputs "Q_out[2..0]" and "Saida_Cont[2..0]". The "Q_out[2..0]" output is connected to "Saida_Cont[2..0]".&lt;/img&gt;
+<!-- Imagem: Diagram showing a "BlocoContador" block with inputs "CLOCK", "VCC", "clk_in", and outputs "Q_out[2..0]" and "Saida_Cont[2..0]". The "Q_out[2..0]" output is connected to "Saida_Cont[2..0]". -->
 
 Entrada clk_in: CLOCK
 
@@ -582,7 +566,6 @@ Saída Q_out [2..0]: Saida_Cont[2..0]
 
 Escolher nome da saída e acrescentar [2..0], pois Q_out é um vetor.
 
-&lt;page_number&gt;23&lt;/page_number&gt;
 
 ---
 
@@ -595,9 +578,8 @@ Após salvar o arquivo como Esquematico_03.bdf:
 
 Especificar Esquematico_03.bdf como Top-Level Entity, antes de proceder à compilação:
 
-&lt;img&gt;Screenshot of a software interface showing a Project Navigator with files listed on the left (e.g., Codigo_1.vhd, Esquematico_1.bdf, Waveform_1.vwf, Esquematico_2.bdf, Waveform_2.vwf, Codigo_2.vhd, Esquematico_3.bdf, Waveform_3.vwf). A right-click context menu is open over "Esquematico_3.bdf", displaying options like Open, Remove File from Project, Set as Top-Level Entity (Ctrl+Shift+J), and Properties...&lt;/img&gt;
+<!-- Imagem: Screenshot of a software interface showing a Project Navigator with files listed on the left (e.g., Codigo_1.vhd, Esquematico_1.bdf, Waveform_1.vwf, Esquematico_2.bdf, Waveform_2.vwf, Codigo_2.vhd, Esquematico_3.bdf, Waveform_3.vwf). A right-click context menu is open over "Esquematico_3.bdf", displaying options like Open, Remove File from Project, Set as Top-Level Entity (Ctrl+Shift+J), and Properties... -->
 
-&lt;page_number&gt;24&lt;/page_number&gt;
 
 ---
 
@@ -614,6 +596,5 @@ Verificação do funcionamento do circuito.
 
 Salvar como Waveform_03.vwf.
 
-&lt;img&gt;Waveform Diagram showing CLOCK signal and three output signals (Saida_Cont[2], Saida_Cont[1], Saida_Cont[0]) with values 000, 001, 010, 011, 100, 101, 110, 111 over time.&lt;/img&gt;
+<!-- Imagem: Waveform Diagram showing CLOCK signal and three output signals (Saida_Cont[2], Saida_Cont[1], Saida_Cont[0]) with values 000, 001, 010, 011, 100, 101, 110, 111 over time. -->
 
-&lt;page_number&gt;25&lt;/page_number&gt;
