@@ -2,11 +2,13 @@
 * text=auto eol=lf
 
 # Quartus II runs on Windows and writes CRLF. It reads these files back.
-# Keep CRLF on checkout so the Quartus editors do not report a changed file.
-*.vhd text eol=crlf
-*.bdf text eol=crlf
-*.vwf text eol=crlf
-*.qsf text eol=crlf
+# -text stores and checks out these files byte for byte, with no end-of-line
+# conversion in either direction. The files stay exactly as Quartus II wrote
+# them, and git records no change when a Windows and a Linux checkout differ.
+*.vhd -text
+*.bdf -text
+*.vwf -text
+*.qsf -text
 
 # Documents
 *.md text eol=lf

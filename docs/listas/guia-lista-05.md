@@ -9,7 +9,7 @@ arquivo esquemático do Quartus II. O bloco vem da Lista de Exercícios nº 5.
 
 ## O bloco decod_3_8
 
-<!-- TODO(img): docs/img/decod-3-8-bloco.png — captura do símbolo decod_3_8 gerado pelo Quartus II, mostrando os pinos entr[2..0], enable e saidas[7..0] -->
+![Esquemático do decod_3_8 no Quartus II. Os pinos Ent[2..0] e Habilita entram à esquerda, o barramento Saidas_[7..0] sai à direita](../img/decod-3-8-esquematico.png)
 
 O bloco tem três portas:
 
@@ -117,6 +117,14 @@ e `entr[2..0]` têm de declarar a mesma largura.
 - [ ] Os barramentos aparecem como linhas grossas
 - [ ] O arquivo está salvo com a extensão `.bdf`
 - [ ] O arquivo está definido como **Top-Level Entity**
+
+## Resultado da simulação
+
+Depois de compilar, abra o arquivo `.vwf` e rode a simulação funcional. Com
+`Habilita` em `0`, todas as saídas ficam em `0`. Com `Habilita` em `1`, cada
+combinação de `Ent[2..0]` acende uma única saída.
+
+![Formas de onda da simulação do decod_3_8. A primeira metade mantém Habilita em 0 e todas as saídas em 0. A segunda metade habilita o decodificador e cada entrada aciona uma saída](../img/decod-3-8-onda.png)
 
 ## Resumo do esquemático
 

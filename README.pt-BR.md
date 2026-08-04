@@ -16,6 +16,7 @@ combinacional e sequencial em VHDL, montada e simulada no Quartus II.
 - [Sobre](#sobre)
 - [Estrutura do repositório](#estrutura-do-repositório)
 - [O que tem aqui](#o-que-tem-aqui)
+- [Resultados](#resultados)
 - [Executar o VHDL](#executar-o-vhdl)
 - [Abrir os arquivos do Quartus II](#abrir-os-arquivos-do-quartus-ii)
 - [Ferramentas](#ferramentas)
@@ -70,10 +71,6 @@ do Quartus II.
 | `src/semana-15/` | `SACI_simpl` | O mesmo controlador, refeito com `with ... select`. A tabela-verdade comanda as saídas diretamente. |
 | `src/semana-16/` | `decod_2_4` | Decodificador de 2 para 4 com entrada de habilitação, escrito com `case` dentro de um process. |
 
-<!-- TODO(img): docs/img/quartus-esquematico-saci.png — Block Editor do Quartus II com src/semana-14/esquematico.bdf aberto, mostrando os pinos de entrada U1, U2, C à esquerda e E, LA, LV à direita -->
-
-<!-- TODO(img): docs/img/quartus-waveform-saci.png — Waveform Editor do Quartus II após simulação funcional do SACI, mostrando as 8 combinações de entrada e as saídas E, LA, LV resultantes -->
-
 ### Notas de aula
 
 | Arquivo | Data | Tema |
@@ -97,7 +94,28 @@ do Quartus II.
 | --- | --- |
 | [`lista-03-enunciado.md`](docs/listas/lista-03-enunciado.md) | O enunciado da Lista 3, como foi entregue |
 | [`guia-lista-05.md`](docs/listas/guia-lista-05.md) | Como ligar um bloco VHDL a pinos de entrada e saída no Quartus II |
+| [`resultados.md`](docs/resultados.md) | Capturas do Quartus II de cada circuito entregue |
 | `entregas/` | As 7 entregas corrigidas, em PDF |
+
+## Resultados
+
+Todos os circuitos abaixo foram montados e simulados no Quartus II. As capturas vêm
+das entregas corrigidas. O arquivo [`docs/resultados.md`](docs/resultados.md) traz o
+conjunto completo, com esquemático e forma de onda de cada exercício.
+
+Um decodificador 3 para 8 com entrada de habilitação, da Lista 5:
+
+![Esquemático do decod_3_8 no Quartus II. Os pinos Ent[2..0] e Habilita entram à esquerda, o barramento Saidas_[7..0] sai à direita](docs/img/decod-3-8-esquematico.png)
+
+A simulação separa dois regimes. Antes de 16 µs a habilitação está em `0` e todas as
+saídas ficam em `0`. Depois de 16 µs cada combinação de entrada aciona exatamente uma
+saída:
+
+![Formas de onda da simulação do decod_3_8. Na primeira metade todas as saídas estão em zero porque Habilita está em 0. Na segunda metade cada valor de Ent aciona uma saída diferente](docs/img/decod-3-8-onda.png)
+
+Um contador MOD 8 construído com três flip-flops JK, do Trabalho 1:
+
+![Esquemático do contador MOD 8 no Quartus II. Três instâncias do bloco BlocoFF_JK em cascata, com J e K ligados a Vcc e as saídas QOUT0, QOUT1 e QOUT2](docs/img/contador-mod8-esquematico.png)
 
 ## Executar o VHDL
 

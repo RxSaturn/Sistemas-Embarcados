@@ -1,25 +1,9 @@
-## Page 1
+# Notas de Aula 20 — FF tipo JK: Elemento de memória
 
-<!-- Imagem: Logo with red circle and green squares -->
-INSTITUTO FEDERAL
-DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA
-Minas Gerais
-Campus Bambuí
-
-Disciplina: BiSuEEA.512 – Sistemas Embarcados
-2º semestre – 2025
-Notas de Aula 20
-
-Instrutor: Williams L. Nicomedes
-Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
-
-<!-- e-mail institucional removido -->
-
-15/01/2026
-
----
-
-## Page 2
+> **Disciplina:** BiSuEEA.512 – Sistemas Embarcados · 2º semestre de 2025  
+> **Instrutor:** Williams L. Nicomedes  
+> **Instituição:** IFMG Campus Bambuí – Departamento de Engenharia e Computação  
+> **Data:** 15/01/2026
 
 Projeto de circuitos sequenciais através da linguagem VHDL:
 
@@ -27,17 +11,13 @@ Projeto de circuitos sequenciais através da linguagem VHDL:
 
 [2]. Contadores.
 
----
+## FF tipo JK: Elemento de memória
 
-## Page 3
-
-# FF tipo JK: Elemento de memória
-
-## Circuito combinacional: Saída depende das entradas:
+### Circuito combinacional: Saída depende das entradas:
 
 Mudança nas entradas → Atualização (“instantânea”) da saída.
 
-## Circuito sequencial: Saída depende das entradas e do clock.
+### Circuito sequencial: Saída depende das entradas e do clock.
 
 Mudança nas entradas → Atualização da saída ocorre apenas na transição do clock:
 
@@ -49,95 +29,31 @@ Estados da saída ao longo do tempo: 0, 1, 2, 3, ...
 
 A saída permanece no estado durante um ciclo do clock (independentemente das entradas).
 
----
-
-## Page 4
-
-# FF tipo JK: Elemento de memória
+## FF tipo JK: Elemento de memória
 
 Flip-flop tipo JK – Tabela de transição. Estado atual: Q(n).
 
-<table>
-  <thead>
-    <tr>
-      <th>J</th>
-      <th>K</th>
-      <th>Q(n + 1)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>Q(n)</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>$\overline{Q(n)}$</td>
-    </tr>
-  </tbody>
-</table>
+| J | K | Q(n + 1) |
+| --- | --- | --- |
+| 0 | 0 | Q(n) |
+| 0 | 1 | 0 |
+| 1 | 0 | 1 |
+| 1 | 1 | $\overline{Q(n)}$ |
 
 <!-- Imagem: A circuit diagram showing a clock signal (CLK) connected to a flip-flop. The flip-flop has two inputs labeled J and K, and two outputs labeled Q and $\overline{Q}$. The J input is connected to one side of the clock, and the K input is connected to the other side. -->
 
----
-
-## Page 5
-
-# FF tipo JK: Elemento de memória
-
 <!-- Imagem: A circuit diagram showing a JK flip-flop with inputs J, K, and CLK, and outputs Q and Q̄. -->
 
-<table>
-  <thead>
-    <tr>
-      <th>J</th>
-      <th>K</th>
-      <th>Q(n + 1)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>Q(n)</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>Q̄(n)</td>
-    </tr>
-  </tbody>
-</table>
+| J | K | Q(n + 1) |
+| --- | --- | --- |
+| 0 | 0 | Q(n) |
+| 0 | 1 | 0 |
+| 1 | 0 | 1 |
+| 1 | 1 | Q̄(n) |
 
 <!-- Imagem: A timing diagram illustrating the behavior of a JK flip-flop over time. The diagram shows four columns labeled J, K, CLK, and Q, each with multiple horizontal lines representing different states (0 or 1) at various points in time. The CLK signal is shown as a series of pulses, and the Q output transitions accordingly. A horizontal arrow labeled "Tempo" indicates the passage of time. -->
 
----
-
-## Page 6
-
-# FF tipo JK - Bloco lógico: Código VHDL
+## FF tipo JK - Bloco lógico: Código VHDL
 
 Ex.: Salvar como Codigo_01.vhd
 
@@ -170,12 +86,6 @@ begin
             elsif J = '1' and K = '0' then Qstate <= '1';
 ```
 
----
-
-## Page 7
-
-# FF tipo JK - Bloco lógico: Código VHDL
-
 Ex.: Salvar como Codigo_01.vhd
 
 ```vhdl
@@ -197,12 +107,6 @@ Ex.: Salvar como Codigo_01.vhd
 47
 ```
 
----
-
-## Page 8
-
-# FF tipo JK - Bloco lógico: Código VHDL
-
 Não é necessário incluir o caso J = 0 e K = 0.
 
 Qstate só será alterado caso alguma condição seja verdadeira.
@@ -213,12 +117,6 @@ A saída Q não pode ser invertida e atribuída a ela mesma:
 
 Variável auxiliar Qstate.
 
----
-
-## Page 9
-
-# FF tipo JK - Bloco lógico: Código VHDL
-
 * Geração do bloco;
 * Inserção no esquemático (Nome: Esquematico_01.bdf);
 * Inclusão das entrada e saídas;
@@ -227,11 +125,7 @@ Variável auxiliar Qstate.
 
 <!-- Imagem: A schematic diagram showing inputs J, K, and CLOCK connected to a block labeled "BlocoFF_JK". Inside this block, there's an instance of a component with pins J, K, clk, and Q. The output pin Q is connected to another block. -->
 
----
-
-## Page 10
-
-# FF tipo JK
+## FF tipo JK
 
 Formas de onda: Especificação dos sinais de entrada:
 
@@ -242,10 +136,6 @@ Verificação do funcionamento do circuito.
 Salvar como Waveform_01.vwf.
 
 <!-- Imagem: Waveform diagram showing CLOCK, J, K, and Q signals with values B0 and B1 over time. -->
-
----
-
-## Page 11
 
 Contador MOD 8 / Divisor de frequências
 
@@ -264,10 +154,6 @@ Timing diagram illustrating the operation of the counter. It shows:
 - A horizontal line labeled "Count Q2Q1Q0>" at the bottom, showing the binary state of the flip-flops over time, starting with 000 and progressing through 001, 010, 011, 100, 101, 110, 111, 000, 001, 010, 100, etc.
 -->
 
----
-
-## Page 12
-
 Contador MOD 8: Blocos
 
 Idea: Interconectar três blocos lógicos correspondentes ao FF tipo JK (BlocoFF_JK) implementado em VHDL:
@@ -276,11 +162,7 @@ Três instâncias (inst, inst1, inst2).
 
 <!-- Imagem: Circuit Diagram showing three instances of BlocoFF_JK connected to form a counter. Each instance has J, K, clk inputs and Q output. The outputs are connected to AND gates labeled 00, 01, and 02. -->
 
----
-
-## Page 13
-
-# Contador MOD 8: Blocos
+## Contador MOD 8: Blocos
 
 Arquivo Esquematico_01.bdf: Teste do bloco simples (pg. 09);
 
@@ -290,54 +172,23 @@ Especificar Esquematico_02.bdf como a entidade de máximo nível: Painel *Projec
 
 <!-- Imagem: Screenshot of Project Navigator window with files listed on the left. A right-click context menu is open over "Esquematico_2.bdf", showing options like Open, Remove File from Project, Set as Top-Level Entity (highlighted with Ctrl+Shift+J), and Properties... -->
 
----
-
-## Page 14
-
 Contador MOD 8: Blocos - Formas de onda
 
 Entrada VCC = 1. (Salvar como Waveform_02.vwf)
 
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value at<br>0 ps</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>in<br>Vcc</td>
-<td>B 1</td>
-</tr>
-<tr>
-<td>in<br>CLOCK</td>
-<td>B 0</td>
-</tr>
-<tr>
-<td>out<br>Q0</td>
-<td>B 0</td>
-</tr>
-<tr>
-<td>out<br>Q1</td>
-<td>B 0</td>
-</tr>
-<tr>
-<td>out<br>Q2</td>
-<td>B 0</td>
-</tr>
-</tbody>
-</table>
+| Name | Value at<br>0 ps |
+| --- | --- |
+| in<br>Vcc | B 1 |
+| in<br>CLOCK | B 0 |
+| out<br>Q0 | B 0 |
+| out<br>Q1 | B 0 |
+| out<br>Q2 | B 0 |
 
 <!-- Imagem: Waveform diagram showing Vcc, CLOCK, Q0, Q1, and Q2 signals over time. -->
 
 <!-- Imagem: Timing diagram illustrating clock pulses, Q0, Q1, Q2, and count states. -->
 
----
-
-## Page 15
-
-# Contador MOD 8: Blocos - Formas de onda
+## Contador MOD 8: Blocos - Formas de onda
 
 **Obs.:** Dentro do mesmo projeto:
 
@@ -351,10 +202,6 @@ Escolher o esquemático (1 ou 2);
 * Selecionar a waveform correspondente;
 
 * (Não precisa compilar de novo).
-
----
-
-## Page 16
 
 (Próx.) Contador MOD 8: Encapsulamento
 

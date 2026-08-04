@@ -1,25 +1,9 @@
-## Page 1
+# Notas de Aula 21 — FF tipo JK: Elemento de memória
 
-<!-- Imagem: Logo with red circle and green squares -->
-INSTITUTO FEDERAL
-DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA
-Minas Gerais
-Campus Bambuí
-
-Disciplina: BiSuEEA.512 – Sistemas Embarcados
-2º semestre – 2025
-Notas de Aula 21
-
-Instrutor: Williams L. Nicomedes
-Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
-
-<!-- e-mail institucional removido -->
-
-22/01/2026
-
----
-
-## Page 2
+> **Disciplina:** BiSuEEA.512 – Sistemas Embarcados · 2º semestre de 2025  
+> **Instrutor:** Williams L. Nicomedes  
+> **Instituição:** IFMG Campus Bambuí – Departamento de Engenharia e Computação  
+> **Data:** 22/01/2026
 
 Projeto de circuitos sequenciais através da linguagem VHDL:
 
@@ -29,17 +13,13 @@ Projeto de circuitos sequenciais através da linguagem VHDL:
 
 [3]. Encapsulamento.
 
----
+## FF tipo JK: Elemento de memória
 
-## Page 3
-
-# FF tipo JK: Elemento de memória
-
-## Circuito combinacional: Saída depende das entradas:
+### Circuito combinacional: Saída depende das entradas:
 
 Mudança nas entradas → Atualização ("instantânea") da saída.
 
-## Circuito sequencial: Saída depende das entradas e do clock.
+### Circuito sequencial: Saída depende das entradas e do clock.
 
 Mudança nas entradas → Atualização da saída ocorre apenas na transição do clock:
 
@@ -51,95 +31,31 @@ Estados da saída ao longo do tempo: 0, 1, 2, 3, ...
 
 A saída permanece no estado durante um ciclo do *clock* (independentemente das entradas).
 
----
-
-## Page 4
-
-# FF tipo JK: Elemento de memória
+## FF tipo JK: Elemento de memória
 
 Flip-flop tipo JK – Tabela de transição. Estado atual: Q(n).
 
-<table>
-  <thead>
-    <tr>
-      <th>J</th>
-      <th>K</th>
-      <th>Q(n + 1)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>Q(n)</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>$\overline{Q(n)}$</td>
-    </tr>
-  </tbody>
-</table>
+| J | K | Q(n + 1) |
+| --- | --- | --- |
+| 0 | 0 | Q(n) |
+| 0 | 1 | 0 |
+| 1 | 0 | 1 |
+| 1 | 1 | $\overline{Q(n)}$ |
 
 <!-- Imagem: A circuit diagram showing a clock signal (CLK) connected to a flip-flop. The flip-flop has two inputs labeled J and K, and two outputs labeled Q and $\overline{Q}$. The J input is connected to one side of the clock, and the K input is connected to the other side. -->
 
----
-
-## Page 5
-
-# FF tipo JK: Elemento de memória
-
 <!-- Imagem: A circuit diagram showing a JK flip-flop with inputs J, K, and CLK, and outputs Q and Q̄. -->
 
-<table>
-  <thead>
-    <tr>
-      <th>J</th>
-      <th>K</th>
-      <th>Q(n + 1)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>Q(n)</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>Q̄(n)</td>
-    </tr>
-  </tbody>
-</table>
+| J | K | Q(n + 1) |
+| --- | --- | --- |
+| 0 | 0 | Q(n) |
+| 0 | 1 | 0 |
+| 1 | 0 | 1 |
+| 1 | 1 | Q̄(n) |
 
 <!-- Imagem: A timing diagram illustrating the behavior of a JK flip-flop over time. The diagram shows four columns labeled J, K, CLK, and Q, each with multiple horizontal lines representing different states (0 or 1) at various points in time. The Q column is highlighted in pink to show its state changes. A horizontal arrow labeled "Tempo" indicates the passage of time from left to right. -->
 
----
-
-## Page 6
-
-# FF tipo JK - Bloco lógico: Código VHDL
+## FF tipo JK - Bloco lógico: Código VHDL
 
 Ex.: Salvar como Codigo_01.vhd
 
@@ -172,12 +88,6 @@ begin
             elsif J = '1' and K = '0' then Qstate <= '1';
 ```
 
----
-
-## Page 7
-
-# FF tipo JK - Bloco lógico: Código VHDL
-
 Ex.: Salvar como Codigo_01.vhd
 
 ```vhdl
@@ -199,12 +109,6 @@ Ex.: Salvar como Codigo_01.vhd
 47
 ```
 
----
-
-## Page 8
-
-# FF tipo JK - Bloco lógico: Código VHDL
-
 Não é necessário incluir o caso J = 0 e K = 0.
 
 Qstate só será alterado caso alguma condição seja verdadeira.
@@ -215,12 +119,6 @@ A saída Q não pode ser invertida e atribuída a ela mesma:
 
 Variável auxiliar Qstate.
 
----
-
-## Page 9
-
-# FF tipo JK - Bloco lógico: Código VHDL
-
 * Geração do bloco;
 * Inserção no esquemático (Nome: Esquematico_01.bdf);
 * Inclusão das entrada e saídas;
@@ -229,11 +127,7 @@ Variável auxiliar Qstate.
 
 <!-- Imagem: A schematic diagram showing inputs J, K, and CLOCK connected to a block labeled "BlocoFF_JK". Inside this block, there's an instance of a component with pins J, K, clk, and Q. The output pin Q is connected to another block. -->
 
----
-
-## Page 10
-
-# FF tipo JK
+## FF tipo JK
 
 Formas de onda: Especificação dos sinais de entrada:
 
@@ -244,10 +138,6 @@ Verificação do funcionamento do circuito.
 Salvar como Waveform_01.vwf.
 
 <!-- Imagem: Waveform diagram showing CLOCK, J, K, and Q signals with values B0 and B1 over time. -->
-
----
-
-## Page 11
 
 Contador MOD 8 / Divisor de frequências
 
@@ -266,10 +156,6 @@ Timing diagram illustrating the operation of the counter. It shows:
 - A horizontal line labeled "Count Q2Q1Q0>" at the bottom, showing the binary state of the flip-flops over time, starting with 000 and progressing through 001, 010, 011, 100, 101, 110, 111, 000, 001, 010, 100, etc.
 -->
 
----
-
-## Page 12
-
 Contador MOD 8: Blocos
 
 Idea: Interconectar três blocos lógicos correspondentes ao FF tipo JK (BlocoFF_JK) implementado em VHDL:
@@ -278,11 +164,7 @@ Três instâncias (inst, inst1, inst2).
 
 <!-- Imagem: VHDL Circuit Diagram showing three instances of BlocoFF_JK connected to form a counter. -->
 
----
-
-## Page 13
-
-# Contador MOD 8: Blocos
+## Contador MOD 8: Blocos
 
 Arquivo Esquematico_01.bdf: Teste do bloco simples (pg. 09);
 
@@ -292,54 +174,23 @@ Especificar Esquematico_02.bdf como a entidade de máximo nível: Painel *Projec
 
 <!-- Imagem: Screenshot of Project Navigator window with files listed on the left. The file "Esquematico_2.bdf" is highlighted, and a context menu is open showing options like "Open", "Remove File from Project", "Set as Top-Level Entity Ctrl+Shift+J", and "Properties...". -->
 
----
-
-## Page 14
-
 Contador MOD 8: Blocos - Formas de onda
 
 Entrada VCC = 1. (Salvar como Waveform_02.vwf)
 
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Value at<br>0 ps</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>in<br>Vcc</td>
-<td>B 1</td>
-</tr>
-<tr>
-<td>in<br>CLOCK</td>
-<td>B 0</td>
-</tr>
-<tr>
-<td>out<br>Q0</td>
-<td>B 0</td>
-</tr>
-<tr>
-<td>out<br>Q1</td>
-<td>B 0</td>
-</tr>
-<tr>
-<td>out<br>Q2</td>
-<td>B 0</td>
-</tr>
-</tbody>
-</table>
+| Name | Value at<br>0 ps |
+| --- | --- |
+| in<br>Vcc | B 1 |
+| in<br>CLOCK | B 0 |
+| out<br>Q0 | B 0 |
+| out<br>Q1 | B 0 |
+| out<br>Q2 | B 0 |
 
 <!-- Imagem: Waveform diagram showing Vcc, CLOCK, Q0, Q1, and Q2 signals over time. -->
 
 <!-- Imagem: Timing diagram illustrating clock pulses, Q0, Q1, Q2, and count states. -->
 
----
-
-## Page 15
-
-# Contador MOD 8: Blocos - Formas de onda
+## Contador MOD 8: Blocos - Formas de onda
 
 **Obs.:** Dentro do mesmo projeto:
 
@@ -354,11 +205,7 @@ Escolher o esquemático (1 ou 2);
 
 * (Não precisa compilar de novo).
 
----
-
-## Page 16
-
-# Contador MOD 8: Encapsulamento
+## Contador MOD 8: Encapsulamento
 
 **Ideia:** Produzir um único bloco correspondente ao contador (ao invés de usar três blocos como na pag. 12).
 
@@ -371,12 +218,6 @@ Incluso no projeto;
 Entrada única (*clock*);
 
 Saída única (contador).
-
----
-
-## Page 17
-
-# Contador MOD 8: Encapsulamento
 
 Novo código VHDL (Código_02.vhd) referente ao contador 'encapsulado' (BlocoContador):
 
@@ -400,12 +241,6 @@ Saída única (Q_out) – tipo std_logic_vector
 0 to 2: Q₀Q₁Q₂
 
 2 downto 0: Q₂Q₁Q₀
-
----
-
-## Page 18
-
-# Contador MOD 8: Encapsulamento
 
 Novo código VHDL (Código_02.vhd) referente ao contador ‘encapsulado’ (BlocoContador):
 
@@ -432,12 +267,6 @@ begin
 end Funcionamento2;
 ```
 
----
-
-## Page 19
-
-# Contador MOD 8: Encapsulamento
-
 ***Dentro da arquitetura***
 
 * **signal Vcc:** Representa o nível alto nas entradas J e K de cada FF.
@@ -449,12 +278,6 @@ end Funcionamento2;
 **Incluir Codigo_01.vhd no projeto:**
 
 * Project > Add Current File to Project
-
----
-
-## Page 20
-
-# Contador MOD 8: Encapsulamento
 
 FF0, FF1, FF2: Criação/instanciação de três blocos lógicos (relativos ao FF tipo JK), cada um deles com entradas J, K, clk e saída Q).
 
@@ -468,12 +291,6 @@ Linha 28, (pg. 18): Usar variável auxiliar clk => Q_out_aux(0).
 Fazer clk => Q_out(0) [???]
 
 Erro. Teríamos saída (Q_out, pg.17) atribuída à entrada (clk).
-
----
-
-## Page 21
-
-# Contador MOD 8: Encapsulamento
 
 Atribuir variável auxiliar (Q_out_aux) à saída verdadeira (Q_out), na linha 32 (pág. 18):
 
@@ -491,13 +308,7 @@ Com o arquivo Codigo_02.vhd ao fundo:
 * Create/Update;
 * Create Symbol Files for Current File.
 
----
-
-## Page 22
-
-# Contador MOD 8: Encapsulamento
-
-## Criação do bloco:
+### Criação do bloco:
 
 <!-- Imagem: Screenshot showing a software interface with a menu on the left and a code editor window on the right. The menu includes options like File, Edit, View, Project, Assignments, Processing, Tools, Window, Help, New..., Open..., Close, New Project Wizard..., Open Project..., Save Project, Close Project, Save, Save As..., Save All, File Properties..., Create / Update, Export..., Convert Programming Files..., Page Setup..., Print Preview, Print..., Recent Files, and various tool icons. -->
 
@@ -512,11 +323,7 @@ component BlocoFF_JK
 end component;
 ```
 
----
-
-## Page 23
-
-# Contador MOD 8: Encapsulamento
+## Contador MOD 8: Encapsulamento
 
 Novo arquivo esquemático: Esquematico_03.bdf
 
@@ -528,21 +335,11 @@ Saída Q_out [2..0]: Saida_Cont[2..0]
 
 Escolher nome da saída e acrescentar [2..0], pois Q_out é um vetor.
 
----
-
-## Page 24
-
-# Contador MOD 8: Encapsulamento
-
 Após salvar o arquivo como Esquematico_03.bdf:
 
 Especificar Esquematico_03.bdf como Top-Level Entity, antes de proceder à compilação:
 
 <!-- Imagem: Screenshot of a software interface showing a Project Navigator with files listed on the left (e.g., Codigo_1.vhd, Esquematico_1.bdf, Waveform_1.vwf, Esquematico_2.bdf, Waveform_2.vwf, Codigo_2.vhd, Esquematico_3.bdf, Waveform_3.vwf). A right-click context menu is open over "Esquematico_3.bdf", displaying options like Open, Remove File from Project, Set as Top-Level Entity (Ctrl+Shift+J), and Properties... -->
-
----
-
-## Page 25
 
 Contador MOD 8: Encapsulamento
 
