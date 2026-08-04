@@ -1,0 +1,15 @@
+# Normalize line endings on commit. Checkout uses LF by default.
+* text=auto eol=lf
+
+# Quartus II runs on Windows and writes CRLF. It reads these files back.
+# Keep CRLF on checkout so the Quartus editors do not report a changed file.
+*.vhd text eol=crlf
+*.bdf text eol=crlf
+*.vwf text eol=crlf
+*.qsf text eol=crlf
+
+# Documents
+*.md text eol=lf
+
+# Binary. Git must not attempt a line-ending conversion or a text diff.
+*.pdf binary
