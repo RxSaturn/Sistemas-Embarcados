@@ -169,13 +169,13 @@ Exemplo prático: Sistema Automático de Controle de Irrigação (SACI)
 
 ```mermaid
 graph TD
-    U1[Sensor de umidade baixa (U1)] --> CL[Circuito Lógico Combinacional]
-    U2[Sensor de umidade alta (U2)] --> CL
-    C[Chave (C)] --> CL
-    CL --> IP[Interface de potência]
-    IP --> EV[Eletroválvula (E)]
-    CL --> LA[LED azul (LA)]
-    CL --> LV[LED vermelho (LV)]
+    U1["Sensor de umidade baixa (U1)"] --> CL["Circuito Lógico Combinacional"]
+    U2["Sensor de umidade alta (U2)"] --> CL
+    C["Chave (C)"] --> CL
+    CL --> IP["Interface de potência"]
+    IP --> EV["Eletroválvula (E)"]
+    CL --> LA["LED azul (LA)"]
+    CL --> LV["LED vermelho (LV)"]
 ```
 
 Circuito lógico: A ser implementado em um chip FPGA.
