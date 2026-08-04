@@ -1,0 +1,31 @@
+{
+  // Most files under docs/ are lecture slides converted to Markdown. Some default
+  // rules describe a hand-written document and do not fit a converted slide deck.
+  // Each rule below is off for a stated reason. Everything else stays on.
+  "config": {
+    "default": true,
+
+    // Slides carry long lines of prose and long image descriptions. Wrapping them
+    // would change where a line breaks in the original material.
+    "MD013": false,
+
+    // The notes mark figures with an HTML comment, <!-- Imagem: ... -->.
+    // Commit 2e7cdd4 chose that form. This rule forbids it.
+    "MD033": false,
+
+    // A slide deck repeats a heading when a topic runs across several slides.
+    "MD024": false,
+
+    // Portuguese headings in these notes end with a colon.
+    "MD026": false,
+
+    // Each converted note starts with "## Page 1", not with an H1.
+    "MD041": false,
+
+    // The original slides use bold text as a sub-heading. Changing it to a real
+    // heading would change the structure the instructor used.
+    "MD036": false
+  },
+  "globs": ["**/*.md"],
+  "ignores": ["node_modules/**"]
+}

@@ -1,0 +1,45 @@
+# Quartus II / Quartus Prime
+# The Block Diagram (.bdf) and Waveform (.vwf) files are source. Keep them.
+# Everything below is regenerated when the project compiles.
+db/
+incremental_db/
+output_files/
+simulation/
+greybox_tmp/
+hc_output/
+*.qws
+*.qdf
+*.rpt
+*.summary
+*.smsg
+*.sof
+*.pof
+*.jdi
+*.pin
+*.done
+*.qarlog
+*.sopcinfo
+*.cmp
+
+# GHDL
+*.cf
+*.o
+*.ghw
+*.vcd
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating system
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini

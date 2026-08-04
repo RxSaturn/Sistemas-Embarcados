@@ -1,6 +1,6 @@
 ## Page 1
 
-&lt;img&gt;Logo of Instituto Federal de Educação, Ciência e Tecnologia Minas Gerais Campus Bambuí&lt;/img&gt;
+<!-- Imagem: Logo of Instituto Federal de Educação, Ciência e Tecnologia Minas Gerais Campus Bambuí -->
 
 **INSTITUTO FEDERAL**
 **DE EDUCAÇÃO, CIÊNCIA E TECNOLOGIA**
@@ -17,12 +17,11 @@ Notas de Aula 16
 
 Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
 
-williams.nicomedes@ifmg.edu.br
+<!-- e-mail institucional removido -->
 
 18/12/2025
 
 ---
-
 
 ## Page 2
 
@@ -32,10 +31,7 @@ Projeto de circuitos combinacionais através da linguagem VHDL:
 
 [2]. Decodificadores.
 
-&lt;page_number&gt;2&lt;/page_number&gt;
-
 ---
-
 
 ## Page 3
 
@@ -43,15 +39,12 @@ Projeto de circuitos combinacionais através da linguagem VHDL:
 
 **Processos:** Regiões de códigos **sequenciais**:
 
-*   Comandos avaliados sequencialmente;
-*   Respeitando a **ordem** na qual estão localizados no código.
+* Comandos avaliados sequencialmente;
+* Respeitando a **ordem** na qual estão localizados no código.
 
 **VHDL:** Comandos concorrentes.
 
-&lt;page_number&gt;3&lt;/page_number&gt;
-
 ---
-
 
 ## Page 4
 
@@ -73,10 +66,7 @@ end func;
 
 Erro: Na região ‘concorrente’ do código (fora de um processo), a descrição envia dois sinais diferentes para a mesma saída s.
 
-&lt;page_number&gt;4&lt;/page_number&gt;
-
 ---
-
 
 ## Page 5
 
@@ -101,13 +91,12 @@ end func;
 
 (a, b): **Lista de sensibilidade**: Sinais responsáveis por acionar a execução do processo.
 
-- Execução sequencial;
-- Saída s atualizada só ao término do processo.
+* Execução sequencial;
+* Saída s atualizada só ao término do processo.
 
-Executa os comandos sequenciais mas **não atualiza o valor de s enquanto o processo está em andamento**. Resultado: s = a and b. &lt;page_number&gt;5&lt;/page_number&gt;
+Executa os comandos sequenciais mas **não atualiza o valor de s enquanto o processo está em andamento**. Resultado: s = a and b.
 
 ---
-
 
 ## Page 6
 
@@ -125,10 +114,7 @@ Comandos sequenciais **dentro de processos**.
 
 (não usar atribuição selecionada with...select)
 
-&lt;page_number&gt;6&lt;/page_number&gt;
-
 ---
-
 
 ## Page 7
 
@@ -150,7 +136,6 @@ Estrutura *if-then-else*: **Dentro de processos.**
 
 ---
 
-
 ## Page 8
 
 # Decodificadores
@@ -165,7 +150,7 @@ Processamento dos dados na representação **binária**;
 
 Resultado exibido em display na forma **decimal**.
 
-<mermaid>
+```mermaid
 graph LR
     subgraph Codificação
         A[Teclado]
@@ -181,12 +166,11 @@ graph LR
     A -- "(Sist. Decimal)" --> A
     B -- "(Sist. Binário)" --> B
     C -- "(Sist. Decimal)" --> C
-</mermaid>
+```
 
-&lt;img&gt;∞ symbol&lt;/img&gt;
+<!-- Imagem: ∞ symbol -->
 
 ---
-
 
 ## Page 9
 
@@ -198,12 +182,9 @@ Para cada combinação na entrada, uma única saída é acionada, mantendo todas
 
 Para N bits de entrada, há 2^N combinações possíveis, e portanto M = 2^N saídas que podem ser ativadas.
 
-&lt;img&gt;A diagram showing a "Decodificador" (Decoder) with N input lines labeled E0, E1, E2, ..., EN-1 on the left, and M output lines labeled S0, S1, S2, ..., SM-1 on the right.&lt;/img&gt;
-
-&lt;page_number&gt;9&lt;/page_number&gt;
+<!-- Imagem: A diagram showing a "Decodificador" (Decoder) with N input lines labeled E0, E1, E2, ..., EN-1 on the left, and M output lines labeled S0, S1, S2, ..., SM-1 on the right. -->
 
 ---
-
 
 ## Page 10
 
@@ -264,10 +245,7 @@ Para N bits de entrada, há 2^N combinações possíveis, e portanto M = 2^N sa�
 
 *Obs.:* Os valores não indicados nas saída correspondem a um bit **0**.
 
-&lt;page_number&gt;10&lt;/page_number&gt;
-
 ---
-
 
 ## Page 11
 
@@ -344,10 +322,7 @@ Para N bits de entrada, há 2^N combinações possíveis, e portanto M = 2^N sa�
 
 *Obs.:* Quando o sinal de controle **ENABLE = 0**, o decodificador **não funciona** (i.e., não seleciona nenhuma saída), mantendo todas as saídas em **0**, independentemente das entradas.
 
-&lt;page_number&gt;1&lt;/page_number&gt;
-
 ---
-
 
 ## Page 12
 
@@ -363,10 +338,7 @@ No arquivo esquemático:
 
 `nome_sinal[3..0]`
 
-&lt;page_number&gt;12&lt;/page_number&gt;
-
 ---
-
 
 ## Page 13
 
@@ -376,6 +348,4 @@ Implementação via portas lógicas...
 
 Portas AND de três entradas, algumas das quais devem ser invertidas (active low)....
 
-&lt;img&gt;Circuit diagram showing four 3-input AND gates (S0, S1, S2, S3) with Enable inputs E1 and E0. The Enable inputs are connected to the first two inputs of each AND gate. The third input of each AND gate is inverted by a NOT gate before being connected to the other two inputs.&lt;/img&gt;
-
-&lt;page_number&gt;13&lt;/page_number&gt;
+<!-- Imagem: Circuit diagram showing four 3-input AND gates (S0, S1, S2, S3) with Enable inputs E1 and E0. The Enable inputs are connected to the first two inputs of each AND gate. The third input of each AND gate is inverted by a NOT gate before being connected to the other two inputs. -->

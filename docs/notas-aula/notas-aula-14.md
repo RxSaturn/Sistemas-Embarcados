@@ -13,20 +13,17 @@ Notas de Aula 14
 Instrutor: Williams L. Nicomedes
 Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
 
-williams.nicomedes@ifmg.edu.br
+<!-- e-mail institucional removido -->
 
 04/12/2025
 
 ---
 
-
 ## Page 2
 
 Projeto de circuitos combinacionais através da linguagem VHDL
 
-
 ---
-
 
 ## Page 3
 
@@ -43,9 +40,7 @@ Uso: Dentro de processos (process).
 **Constante (constant):**
 Uso: Diversos locais do código; inicializada com um valor específico e fixo.
 
-
 ---
-
 
 ## Page 4
 
@@ -53,18 +48,16 @@ Uso: Diversos locais do código; inicializada com um valor específico e fixo.
 
 ## Tipos de dado (pacote padrão):
 
-*   **bit:** `'0'` e `'1'` (entre aspas);
-*   **boolean:** true e false (comparações, testes,...)
-*   **character:** Caracteres ASCII: `'a'`, `'b'`, ... (entre aspas);
-*   **integer:** Números inteiros: 1, 2, ..., 15, ... (sem aspas);
-*   **real:** Pontos decimais: 5.2, 10.1, ... (sem aspas);
-*   **Tipo std_logic:** (pacote ieee.std_logic_1164);
+* **bit:** `'0'` e `'1'` (entre aspas);
+* **boolean:** true e false (comparações, testes,...)
+* **character:** Caracteres ASCII: `'a'`, `'b'`, ... (entre aspas);
+* **integer:** Números inteiros: 1, 2, ..., 15, ... (sem aspas);
+* **real:** Pontos decimais: 5.2, 10.1, ... (sem aspas);
+* **Tipo std_logic:** (pacote ieee.std_logic_1164);
 
 ## Dados escalares x Dados compostos (vetores)...
 
-
 ---
-
 
 ## Page 5
 
@@ -116,7 +109,6 @@ Parênteses (evitar ambiguidade).
 
 ---
 
-
 ## Page 6
 
 # Circuitos combinacionais
@@ -125,9 +117,7 @@ Parênteses (evitar ambiguidade).
 
 <!-- Imagem: A diagram showing a "Circuito digital combinacional" (Digital combinational circuit). On the left side, there are three vertical labels: "Entradas" (Inputs) with arrows pointing to E₀, E₁, and Eₙ. On the right side, there are three vertical labels: "Saídas" (Outputs) with arrows pointing to S₀, S₁, and Sₘ. -->
 
-
 ---
-
 
 ## Page 7
 
@@ -142,9 +132,7 @@ Simplificação das expressões via álgebra booleana e mapas de Karnaugh;
 4. Descrição em código VHDL;
 5. Implementação em FPGA (síntese).
 
-
 ---
-
 
 ## Page 8
 
@@ -162,26 +150,24 @@ Exemplo prático: Sistema Automático de Controle de Irrigação (SACI)
 
 ---
 
-
 ## Page 9
 
 # Exemplo prático: SACI
 
 ```mermaid
 graph TD
-    U1[Sensor de umidade baixa (U1)] --> CL[Circuito Lógico Combinacional]
-    U2[Sensor de umidade alta (U2)] --> CL
-    C[Chave (C)] --> CL
-    CL --> IP[Interface de potência]
-    IP --> EV[Eletroválvula (E)]
-    CL --> LA[LED azul (LA)]
-    CL --> LV[LED vermelho (LV)]
+    U1["Sensor de umidade baixa (U1)"] --> CL["Circuito Lógico Combinacional"]
+    U2["Sensor de umidade alta (U2)"] --> CL
+    C["Chave (C)"] --> CL
+    CL --> IP["Interface de potência"]
+    IP --> EV["Eletroválvula (E)"]
+    CL --> LA["LED azul (LA)"]
+    CL --> LV["LED vermelho (LV)"]
 ```
 
 Circuito lógico: A ser implementado em um chip FPGA.
 
 ---
-
 
 ## Page 10
 
@@ -199,7 +185,6 @@ Umidade maior do que *N*: Nível lógico 1.
 
 ---
 
-
 ## Page 11
 
 # Exemplo prático: SACI
@@ -211,9 +196,7 @@ Botão não-pressionado: Nível lógico 0.
 
 <!-- Imagem: A breadboard with an Arduino Uno board, a push button, a resistor, and a LED connected by wires. -->
 
-
 ---
-
 
 ## Page 12
 
@@ -223,9 +206,7 @@ Botão não-pressionado: Nível lógico 0.
 
 <!-- Imagem: An electric valve with a transparent body showing internal components, including a solenoid coil. The valve has labels "Model: 4V410-15", "Pressure: 0.15~0.8MPa", "VALVE", "CE", and "EVI 24V DC 4.8W 200mA 100% ED IP 65 CE". It also shows ports labeled A, B, R, P, S, and a diagram indicating flow directions. -->
 
-
 ---
-
 
 ## Page 13
 
@@ -243,9 +224,7 @@ Um LED azul indicará quando o irrigador estiver em operação;
 
 Um LED vermelho indicará umidade acima de 80%.
 
-
 ---
-
 
 ## Page 14
 
@@ -254,20 +233,21 @@ Um LED vermelho indicará umidade acima de 80%.
 ## Entradas
 
 **Sensor U₁**
-*   Umidade menor do que 40%: U₁ = 0
-*   Umidade maior do que 40%: U₁ = 1
+
+* Umidade menor do que 40%: U₁ = 0
+* Umidade maior do que 40%: U₁ = 1
 
 **Sensor U₂**
-*   Umidade menor do que 80%: U₂ = 0
-*   Umidade maior do que 80%: U₂ = 1
+
+* Umidade menor do que 80%: U₂ = 0
+* Umidade maior do que 80%: U₂ = 1
 
 **Chave C**
-*   Chave desligada: C = 0
-*   Chave ligada: C = 1
 
+* Chave desligada: C = 0
+* Chave ligada: C = 1
 
 ---
-
 
 ## Page 15
 
@@ -277,22 +257,20 @@ Um LED vermelho indicará umidade acima de 80%.
 
 **Eletroválvula E**
 
-*   $E = 0$: Eletroválvula fechada (irrigador desligado)
-*   $E = 1$: Eletroválvula aberta (irrigador ligado)
+* $E = 0$: Eletroválvula fechada (irrigador desligado)
+* $E = 1$: Eletroválvula aberta (irrigador ligado)
 
 **LED Azul $L_A$**
 
-*   $L_A = 0$: LED apagado (irrigação desligada)
-*   $L_A = 1$: LED aceso (irrigação ligada)
+* $L_A = 0$: LED apagado (irrigação desligada)
+* $L_A = 1$: LED aceso (irrigação ligada)
 
 **LED Vermelho $L_V$**
 
-*   $L_V = 0$: LED apagado (umidade baixa)
-*   $L_V = 1$: LED aceso (umidade alta)
-
+* $L_V = 0$: LED apagado (umidade baixa)
+* $L_V = 1$: LED aceso (umidade alta)
 
 ---
-
 
 ## Page 16
 
@@ -306,9 +284,7 @@ O conjunto de entradas U₁ = 0 e U₂ = 1 portanto não ocorre; as saídas corr
 
 <!-- Imagem: A diagram showing a "Circuito Lógico Combinacional" with three inputs labeled U1, U2, and C, and three outputs labeled E, LA, and LV. -->
 
-
 ---
-
 
 ## Page 17
 
@@ -377,13 +353,11 @@ O conjunto de entradas U₁ = 0 e U₂ = 1 portanto não ocorre; as saídas corr
 
 Obs.: L<sub>A</sub> = E, visto que o LED azul funciona como um sinalizador para a irrigação.
 
-
 ---
-
 
 ## Page 18
 
-3. Obtenção das expressões lógicas (I/O)
+1. Obtenção das expressões lógicas (I/O)
 
 Combinar (via *or*) os produtos canônicos (cujas condições de entrada produzam nível lógico 1 na saída)
 
@@ -403,13 +377,10 @@ Se tomarmos $X = 1$, teremos mais produtos canônicos, que poderiam ajudar na si
 
 Tomar então $X = 0$.
 
-
 ---
-
 
 ## Page 19
 
-4. Descrição em código VHDL
+1. Descrição em código VHDL
 
 (AVA)
-

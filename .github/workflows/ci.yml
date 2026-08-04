@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# Least privilege. Neither job writes to the repository.
+permissions:
+  contents: read
+
+jobs:
+  markdown:
+    name: Lint Markdown
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+
+      - name: Run markdownlint
+        run: npx --yes markdownlint-cli2
+
+  vhdl:
+    name: Analyze VHDL
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      # GHDL comes from the Ubuntu archive. A distribution package needs no
+      # third-party action, so no commit SHA has to be pinned here.
+      - name: Install GHDL
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ghdl
+          ghdl --version
+
+      - name: Analyze every VHDL file
+        run: |
+          mkdir -p build/ghdl
+          status=0
+          for file in src/semana-*/*.vhd; do
+            echo "::group::ghdl -a ${file}"
+            if ghdl -a --std=08 --workdir=build/ghdl "${file}"; then
+              echo "OK"
+            else
+              echo "::error file=${file}::ghdl failed to analyze this file"
+              status=1
+            fi
+            echo "::endgroup::"
+          done
+          exit "${status}"
+
+      - name: Elaborate every design unit
+        run: |
+          status=0
+          for unit in SACI SACI_simpl decod_2_4; do
+            echo "::group::ghdl -e ${unit}"
+            if ghdl -e --std=08 --workdir=build/ghdl "${unit}"; then
+              echo "OK"
+            else
+              echo "::error::ghdl failed to elaborate ${unit}"
+              status=1
+            fi
+            echo "::endgroup::"
+          done
+          exit "${status}"
