@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # The workflows are the only pinned dependency in this repository. There is
+  # no package.json and no requirements.txt, because CI calls markdownlint
+  # through npx and installs GHDL from the Ubuntu archive.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
