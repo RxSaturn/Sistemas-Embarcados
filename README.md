@@ -16,6 +16,7 @@ and sequential logic in VHDL, built and simulated in Quartus II.
 - [About](#about)
 - [Repository structure](#repository-structure)
 - [What is in here](#what-is-in-here)
+- [Results](#results)
 - [Run the VHDL](#run-the-vhdl)
 - [Open the Quartus II files](#open-the-quartus-ii-files)
 - [Tech stack](#tech-stack)
@@ -70,10 +71,6 @@ waveform.
 | `src/semana-15/` | `SACI_simpl` | The same controller, rebuilt with `with ... select`. The truth table drives the outputs directly. |
 | `src/semana-16/` | `decod_2_4` | A 2-to-4 decoder with an enable input, written with a `case` inside a process. |
 
-<!-- TODO(img): docs/img/quartus-esquematico-saci.png — Quartus II Block Editor showing src/semana-14/esquematico.bdf, with the input pins U1, U2, C on the left and E, LA, LV on the right -->
-
-<!-- TODO(img): docs/img/quartus-waveform-saci.png — Quartus II Waveform Editor after a functional simulation of SACI, showing all 8 input combinations and the resulting E, LA, LV -->
-
 ### Class notes
 
 | File | Date | Topic |
@@ -96,7 +93,27 @@ waveform.
 | --- | --- |
 | [`lista-03-enunciado.md`](docs/listas/lista-03-enunciado.md) | The exercise sheet for Lista 3, as handed out |
 | [`guia-lista-05.md`](docs/listas/guia-lista-05.md) | How to wire a VHDL block to input and output pins in Quartus II |
+| [`resultados.md`](docs/resultados.md) | Quartus II screenshots for every graded circuit |
 | `entregas/` | The 7 graded submissions as PDF |
+
+## Results
+
+Every circuit below was built and simulated in Quartus II. The screenshots come from
+the graded submissions. [`docs/resultados.md`](docs/resultados.md) holds the full set
+with the schematic and the waveform for each exercise.
+
+A 3-to-8 decoder driven by an enable input, from Lista 5:
+
+![Quartus II schematic of decod_3_8. The pins Ent[2..0] and Habilita enter on the left and the bus Saidas_[7..0] leaves on the right](docs/img/decod-3-8-esquematico.png)
+
+The simulation splits into two halves. Before 16 µs the enable input is `0` and every
+output stays at `0`. After 16 µs each input combination drives exactly one output:
+
+![Waveform of the decod_3_8 simulation. Every output is zero in the first half because the enable input is 0. In the second half each value of Ent drives a different output](docs/img/decod-3-8-onda.png)
+
+A MOD 8 counter built from three JK flip-flops, from Trabalho 1:
+
+![Quartus II schematic of the MOD 8 counter. Three BlocoFF_JK instances in a chain, with J and K tied to Vcc and the outputs QOUT0, QOUT1 and QOUT2](docs/img/contador-mod8-esquematico.png)
 
 ## Run the VHDL
 
