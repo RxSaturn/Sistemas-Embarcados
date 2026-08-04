@@ -17,7 +17,7 @@ Notas de Aula 09
 
 Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
 
-williams.nicomedes@ifmg.edu.br
+<!-- e-mail institucional removido -->
 
 30/10/2025
 

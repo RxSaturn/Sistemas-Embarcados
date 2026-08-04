@@ -13,7 +13,7 @@ Notas de Aula 21
 Instrutor: Williams L. Nicomedes
 Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
 
-williams.nicomedes@ifmg.edu.br
+<!-- e-mail institucional removido -->
 
 22/01/2026
 

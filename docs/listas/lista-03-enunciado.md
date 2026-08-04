@@ -18,9 +18,9 @@ Instrutor: Williams L. Nicomedes
 
 Laboratório de Automação e Controle – Núcleo 2 de Laboratórios, Sala 02
 
-williams.nicomedes@ifmg.edu.br
+<!-- e-mail institucional removido -->
 
-Lista de Exercícios nº3 – (10 pontos)
+# Lista de Exercícios nº 3 – (10 pontos)
 
 **Circuitos combinacionais**
 
